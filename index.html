@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Booster — Social Media Growth Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --primary: #1A56DB;
+  --primary-dark: #0E3A8C;
+  --primary-light: #EFF6FF;
+  --accent: #0EA5E9;
+  --teal: #0D9488;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --bg: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --text: #1E293B;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+  --nav-bg: #0F172A;
+  --nav-text: #E2E8F0;
+  --shadow: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Mulish', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+h1,h2,h3,h4,h5 { font-family: 'Outfit', sans-serif; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: 'Mulish', sans-serif; }
+img { max-width: 100%; }
+input, select, textarea { font-family: 'Mulish', sans-serif; }
+
+/* ─── UTILITIES ─── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: var(--radius-sm); border: none; font-weight: 600; font-size: 14px; transition: all .2s; cursor: pointer; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,86,219,.35); }
+.btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-success { background: var(--success); color: #fff; }
+.btn-success:hover { background: #059669; }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-sm { padding: 6px 14px; font-size: 13px; }
+.btn-lg { padding: 14px 32px; font-size: 16px; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 12px; font-weight: 700; }
+.badge-success { background: #D1FAE5; color: #065F46; }
+.badge-warning { background: #FEF3C7; color: #92400E; }
+.badge-primary { background: var(--primary-light); color: var(--primary); }
+.badge-danger { background: #FEE2E2; color: #991B1B; }
+.card { background: var(--bg-card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; border: 1px solid var(--border); }
+.section-title { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+.section-sub { color: var(--text-muted); font-size: 16px; max-width: 560px; }
+.text-center { text-align: center; }
+.text-primary { color: var(--primary); }
+.text-muted { color: var(--text-muted); }
+.text-success { color: var(--success); }
+.mt-1{margin-top:8px} .mt-2{margin-top:16px} .mt-3{margin-top:24px} .mt-4{margin-top:32px}
+.mb-1{margin-bottom:8px} .mb-2{margin-bottom:16px} .mb-3{margin-bottom:24px}
+.flex { display: flex; } .items-center { align-items: center; } .justify-between { justify-content: space-between; }
+.gap-1{gap:8px} .gap-2{gap:16px} .gap-3{gap:24px}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.hidden { display: none !important; }
+.divider { height: 1px; background: var(--border); margin: 24px 0; }
+.tag { display: inline-block; padding: 4px 12px; background: var(--primary-light); color: var(--primary); border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+
+/* ─── NAVIGATION ─── */
+.navbar { position: sticky; top: 0; z-index: 1000; background: var(--nav-bg); border-bottom: 1px solid rgba(255,255,255,.08); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; }
+.nav-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+.nav-logo-text { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; color: #fff; letter-spacing: -.3px; }
+.nav-logo-text span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-link { color: var(--nav-text); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; transition: all .2s; cursor: pointer; }
+.nav-link:hover, .nav-link.active { background: rgba(255,255,255,.1); color: #fff; }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.balance-chip { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: 50px; padding: 6px 14px; color: #fff; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+.balance-chip i { color: var(--warning); }
+.avatar-chip { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; cursor: pointer; }
+
+/* ─── HERO ─── */
+.hero { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 60%, #0D4F8C 100%); color: #fff; padding: 80px 0 60px; overflow: hidden; position: relative; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.hero-inner { display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; position: relative; }
+.hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(14,165,233,.15); border: 1px solid rgba(14,165,233,.3); border-radius: 50px; padding: 6px 16px; color: #7DD3FC; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+.hero h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
+.hero h1 .highlight { color: #38BDF8; }
+.hero p { font-size: 17px; color: #94A3B8; margin-bottom: 32px; line-height: 1.7; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 32px; margin-top: 40px; }
+.hero-stat { border-left: 3px solid var(--accent); padding-left: 16px; }
+.hero-stat-num { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; }
+.hero-stat-label { color: #94A3B8; font-size: 13px; }
+.hero-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 28px; backdrop-filter: blur(10px); }
+.hero-card-title { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.platform-mini-list { display: flex; flex-direction: column; gap: 12px; }
+.platform-mini-item { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.05); border-radius: var(--radius-sm); padding: 10px 14px; }
+.platform-mini-left { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #CBD5E1; font-weight: 500; }
+.platform-mini-price { font-weight: 700; font-size: 14px; color: #38BDF8; }
+
+/* ─── PLATFORM ICONS ─── */
+.icon-tiktok { color: #010101; background: #fff; }
+.icon-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+.icon-facebook { background: #1877F2; color: #fff; }
+.icon-telegram { background: #229ED9; color: #fff; }
+.icon-youtube { background: #FF0000; color: #fff; }
+.icon-whatsapp { background: #25D366; color: #fff; }
+.platform-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+
+/* ─── STATS BAR ─── */
+.stats-bar { background: var(--primary); padding: 20px 0; }
+.stats-bar-inner { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px; }
+.stats-bar-item { text-align: center; color: #fff; }
+.stats-bar-num { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; }
+.stats-bar-label { font-size: 13px; opacity: .8; }
+
+/* ─── SECTIONS ─── */
+.section { padding: 72px 0; }
+.section-alt { background: var(--bg-card); }
+
+/* ─── PLATFORM CARDS ─── */
+.platform-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+.platform-card { background: var(--bg-card); border: 2px solid var(--border); border-radius: var(--radius); padding: 24px; cursor: pointer; transition: all .25s; position: relative; overflow: hidden; }
+.platform-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.platform-card.selected { border-color: var(--primary); background: var(--primary-light); }
+.platform-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.platform-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.platform-card-name { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; }
+.platform-card-count { color: var(--text-muted); font-size: 13px; margin-top: 2px; }
+.platform-card-services { display: flex; flex-wrap: wrap; gap: 6px; }
+.service-chip { font-size: 12px; padding: 4px 10px; background: var(--bg); border-radius: 50px; color: var(--text-muted); border: 1px solid var(--border); }
+
+/* ─── ORDER FORM ─── */
+.order-section { padding: 72px 0; background: var(--bg); }
+.order-layout { display: grid; grid-template-columns: 1fr 360px; gap: 28px; margin-top: 36px; }
+.form-group { margin-bottom: 20px; }
+.form-label { display: block; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 8px; }
+.form-label span { color: var(--danger); }
+.form-control { width: 100%; padding: 11px 14px; border: 2px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; color: var(--text); background: var(--bg-card); transition: border-color .2s; outline: none; }
+.form-control:focus { border-color: var(--primary); }
+.form-control select { appearance: none; }
+select.form-control { cursor: pointer; }
+.form-hint { font-size: 12px; color: var(--text-muted); margin-top: 5px; }
+.quality-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quality-option { border: 2px solid var(--border); border-radius: var(--radius-sm); padding: 14px; cursor: pointer; transition: all .2s; position: relative; }
+.quality-option:hover { border-color: var(--primary); }
+.quality-option.selected { border-color: var(--primary); background: var(--primary-light); }
+.quality-option input { position: absolute; opacity: 0; }
+.quality-name { font-weight: 700; font-size: 14px; }
+.quality-price { color: var(--primary); font-size: 13px; margin-top: 2px; }
+.quantity-slider { width: 100%; margin: 10px 0; accent-color: var(--primary); }
+.quantity-display { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); }
+.order-summary { background: var(--bg-card); border: 2px solid var(--border); border-radius: var(--radius); padding: 24px; position: sticky; top: 88px; }
+.order-summary-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 16px; }
+.summary-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 14px; }
+.summary-row.total { border-top: 2px solid var(--border); margin-top: 8px; padding-top: 14px; }
+.summary-row.total .label { font-weight: 700; font-size: 15px; }
+.summary-row.total .value { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--primary); }
+.price-per-k { background: var(--primary-light); border-radius: var(--radius-sm); padding: 10px 14px; margin: 12px 0; text-align: center; }
+.price-per-k-num { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+.delivery-badge { background: #D1FAE5; color: #065F46; border-radius: var(--radius-sm); padding: 8px 14px; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-top: 12px; }
+.warning-box { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: var(--radius-sm); padding: 12px 14px; margin-top: 12px; font-size: 13px; color: #92400E; display: flex; gap: 8px; }
+
+/* ─── DASHBOARD ─── */
+.dashboard { padding: 32px 0; }
+.dashboard-header { margin-bottom: 28px; }
+.dashboard-header h2 { font-size: 1.6rem; font-weight: 800; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+.stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.stat-card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 12px; }
+.stat-card-value { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; }
+.stat-card-label { color: var(--text-muted); font-size: 13px; margin-top: 3px; }
+.dashboard-grid { display: grid; grid-template-columns: 1fr 340px; gap: 24px; }
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 12px 14px; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; border-bottom: 2px solid var(--border); }
+td { padding: 13px 14px; border-bottom: 1px solid var(--border); font-size: 14px; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg); }
+.order-id { font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--primary); }
+.referral-card { background: linear-gradient(135deg, var(--primary) 0%, #0E3A8C 100%); color: #fff; border-radius: var(--radius); padding: 24px; }
+.referral-title { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.referral-code { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: var(--radius-sm); padding: 14px; margin: 14px 0; display: flex; justify-content: space-between; align-items: center; }
+.referral-code-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 1px; }
+.referral-link-box { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius-sm); padding: 10px 14px; margin: 10px 0; font-size: 12px; word-break: break-all; }
+.referral-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.referral-stat { background: rgba(255,255,255,.1); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
+.referral-stat-num { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; }
+.referral-stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+.progress-bar { height: 8px; background: rgba(255,255,255,.2); border-radius: 50px; margin-top: 12px; overflow: hidden; }
+.progress-fill { height: 100%; background: #38BDF8; border-radius: 50px; transition: width .5s; }
+.claim-code-form { margin-top: 16px; }
+.claim-input-group { display: flex; gap: 8px; }
+.claim-input { flex: 1; padding: 10px 14px; border: 2px solid rgba(255,255,255,.25); border-radius: var(--radius-sm); background: rgba(255,255,255,.1); color: #fff; font-size: 14px; outline: none; }
+.claim-input::placeholder { color: rgba(255,255,255,.5); }
+.claim-input:focus { border-color: rgba(255,255,255,.5); }
+
+/* ─── ADD FUNDS ─── */
+.add-funds-section { background: var(--bg-card); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); }
+.funds-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.funds-method { border: 2px solid var(--border); border-radius: var(--radius-sm); padding: 16px; cursor: pointer; transition: all .2s; text-align: center; }
+.funds-method:hover, .funds-method.selected { border-color: var(--primary); background: var(--primary-light); }
+.funds-method-icon { font-size: 28px; margin-bottom: 8px; }
+.funds-method-name { font-weight: 700; font-size: 14px; }
+
+/* ─── TESTIMONIALS ─── */
+.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+.testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.testimonial-stars { color: var(--warning); margin-bottom: 12px; font-size: 14px; }
+.testimonial-text { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.author-avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: #fff; }
+.author-name { font-weight: 700; font-size: 14px; }
+.author-handle { color: var(--text-muted); font-size: 12px; }
+
+/* ─── FAQ ─── */
+.faq-list { margin-top: 40px; max-width: 780px; margin-left: auto; margin-right: auto; }
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; }
+.faq-question { width: 100%; background: var(--bg-card); border: none; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--text); text-align: left; transition: background .2s; }
+.faq-question:hover { background: var(--bg); }
+.faq-question i { transition: transform .25s; color: var(--primary); flex-shrink: 0; }
+.faq-question.open i { transform: rotate(180deg); }
+.faq-answer { background: var(--bg-card); padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height .3s, padding .3s; font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+.faq-answer.open { max-height: 300px; padding: 0 20px 18px; }
+
+/* ─── HOW IT WORKS ─── */
+.how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; position: relative; }
+.how-steps::before { content: ''; position: absolute; top: 30px; left: 12%; right: 12%; height: 2px; background: linear-gradient(to right, var(--primary), var(--accent)); z-index: 0; }
+.how-step { text-align: center; position: relative; z-index: 1; }
+.how-step-num { width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: #fff; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 0 0 6px var(--bg); }
+.how-step-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.how-step-desc { font-size: 13px; color: var(--text-muted); }
+
+/* ─── CONTACT ─── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.contact-info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+.contact-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.contact-detail-title { font-weight: 700; margin-bottom: 4px; }
+.contact-detail-val { color: var(--text-muted); font-size: 14px; }
+.chat-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff; padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 700; font-size: 15px; transition: background .2s; margin-top: 8px; }
+.chat-btn:hover { background: #128C7E; }
+
+/* ─── FOOTER ─── */
+.footer { background: var(--nav-bg); color: var(--nav-text); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.footer-brand p { font-size: 14px; color: #94A3B8; line-height: 1.7; margin: 14px 0; }
+.footer-socials { display: flex; gap: 10px; }
+.social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; font-size: 15px; transition: background .2s; }
+.social-btn:hover { background: var(--primary); }
+.footer-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; color: #fff; margin-bottom: 18px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #94A3B8; font-size: 14px; transition: color .2s; }
+.footer-links a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 48px; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { color: #64748B; font-size: 13px; }
+.footer-legal { display: flex; gap: 16px; }
+.footer-legal a { color: #64748B; font-size: 13px; transition: color .2s; }
+.footer-legal a:hover { color: #fff; }
+
+/* ─── MODALS ─── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
+.modal { background: var(--bg-card); border-radius: var(--radius); width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+.modal-lg { max-width: 860px; }
+.modal-header { padding: 24px 24px 0; display: flex; justify-content: space-between; align-items: center; }
+.modal-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; }
+.modal-close { width: 34px; height: 34px; border-radius: 50%; border: none; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text-muted); cursor: pointer; transition: background .2s; }
+.modal-close:hover { background: var(--border); }
+.modal-body { padding: 20px 24px 24px; }
+.auth-tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 24px; }
+.auth-tab { flex: 1; padding: 12px; text-align: center; font-weight: 600; font-size: 15px; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; color: var(--text-muted); transition: all .2s; }
+.auth-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* ─── ADMIN PANEL ─── */
+.admin-modal { max-width: 1000px; }
+.admin-tabs { display: flex; gap: 4px; background: var(--bg); padding: 4px; border-radius: var(--radius-sm); margin-bottom: 20px; }
+.admin-tab { flex: 1; padding: 10px; text-align: center; font-weight: 600; font-size: 13px; border-radius: 6px; cursor: pointer; transition: all .2s; color: var(--text-muted); }
+.admin-tab.active { background: var(--bg-card); color: var(--primary); box-shadow: var(--shadow); }
+.admin-stat { background: var(--bg); border-radius: var(--radius-sm); padding: 16px; text-align: center; }
+.admin-stat-num { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.admin-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+.code-gen-form { display: flex; gap: 10px; align-items: flex-end; }
+.code-gen-form .form-group { flex: 1; margin: 0; }
+.generated-code { background: var(--primary-light); border: 2px dashed var(--primary); border-radius: var(--radius-sm); padding: 14px; text-align: center; font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 12px; }
+
+/* ─── TOAST ─── */
+.toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+.toast { background: var(--nav-bg); color: #fff; padding: 14px 20px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow-md); animation: slideIn .3s ease; min-width: 280px; max-width: 360px; }
+.toast.success { border-left: 4px solid var(--success); }
+.toast.error { border-left: 4px solid var(--danger); }
+.toast.info { border-left: 4px solid var(--accent); }
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+/* ─── LOADER ─── */
+.loader { display: inline-block; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .order-layout { grid-template-columns: 1fr; }
+  .platform-cards { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .section-title { font-size: 1.6rem; }
+  .platform-cards, .testimonials, .how-steps { grid-template-columns: 1fr; }
+  .how-steps::before { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .quality-options { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 20px; }
+}
+.page { display: none; }
+.page.active { display: block; }
+
+/* ─── NOTIFICATION DOT ─── */
+.notif-dot { width: 8px; height: 8px; background: var(--danger); border-radius: 50%; position: absolute; top: 4px; right: 4px; }
+
+/* ─── LIVE CHAT BUBBLE ─── */
+.chat-bubble { position: fixed; bottom: 28px; left: 28px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 4px 20px rgba(37,211,102,.4); cursor: pointer; z-index: 999; transition: transform .2s; }
+.chat-bubble:hover { transform: scale(1.1); }
+
+/* Add funds modal */
+.amount-presets { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+.amount-preset { padding: 8px 16px; border: 2px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; font-weight: 600; font-size: 14px; transition: all .2s; background: var(--bg-card); }
+.amount-preset:hover, .amount-preset.selected { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ TOAST CONTAINER ═══════════════════════════════════ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ═══════════════════════════════════ NAVIGATION ═══════════════════════════════════ -->
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-logo" id="navLogo">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230F172A'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='42' fill='%2300ACC1'%3E🚀%3C/text%3E%3C/svg%3E" alt="Global Booster" id="logoImg">
+        <div>
+          <div class="nav-logo-text">Global <span>Booster</span></div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <span class="nav-link active" onclick="showPage('home')">Home</span>
+        <span class="nav-link" onclick="scrollToOrder()">Order Now</span>
+        <span class="nav-link" onclick="showPage('home'); scrollToSection('testimonials')">Reviews</span>
+        <span class="nav-link" onclick="showPage('home'); scrollToSection('faq')">FAQ</span>
+        <span class="nav-link" onclick="showPage('home'); scrollToSection('contact')">Contact</span>
+        <span class="nav-link" id="dashLink" onclick="showPage('dashboard')" style="display:none">Dashboard</span>
+      </div>
+      <div class="nav-right" id="navRight">
+        <button class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.3)" onclick="openAuth('login')">Sign In</button>
+        <button class="btn btn-primary btn-sm" onclick="openAuth('register')">Get Started</button>
+      </div>
+      <div class="nav-right hidden" id="navUser">
+        <div class="balance-chip" id="balanceChip"><i class="fas fa-wallet"></i> <span id="navBalance">0.00</span> GHS</div>
+        <button class="btn btn-primary btn-sm" onclick="openAddFunds()"><i class="fas fa-plus"></i> Add Funds</button>
+        <div class="avatar-chip" id="userAvatar" onclick="toggleUserMenu()">U</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════ HOME PAGE ═══════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag"><i class="fas fa-bolt"></i> Ghana's #1 SMM Panel</div>
+        <h1>Grow Your Social Media <span class="highlight">Faster</span> in Ghana</h1>
+        <p>Affordable, high-quality social media growth services delivered fast. Followers, likes, views and more for every platform — paid conveniently in GHS.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary btn-lg" onclick="scrollToOrder()"><i class="fas fa-rocket"></i> Start Boosting</button>
+          <button class="btn btn-lg" style="background:rgba(255,255,255,.1);color:#fff;border:2px solid rgba(255,255,255,.25)" onclick="openAuth('register')"><i class="fas fa-user-plus"></i> Create Account</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">5,200+</div><div class="hero-stat-label">Happy Customers</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">98.7%</div><div class="hero-stat-label">Delivery Rate</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">Platforms Supported</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title"><i class="fas fa-fire" style="color:#F59E0B"></i> Popular Services</div>
+        <div class="platform-mini-list">
+          <div class="platform-mini-item">
+            <div class="platform-mini-left">
+              <div class="platform-icon icon-tiktok"><i class="fab fa-tiktok"></i></div>
+              TikTok Followers
+            </div>
+            <div class="platform-mini-price">85 GHS/1k</div>
+          </div>
+          <div class="platform-mini-item">
+            <div class="platform-mini-left">
+              <div class="platform-icon icon-instagram"><i class="fab fa-instagram"></i></div>
+              Instagram Followers
+            </div>
+            <div class="platform-mini-price">50 GHS/1k</div>
+          </div>
+          <div class="platform-mini-item">
+            <div class="platform-mini-left">
+              <div class="platform-icon icon-youtube"><i class="fab fa-youtube"></i></div>
+              YouTube Subscribers
+            </div>
+            <div class="platform-mini-price">550 GHS/1k</div>
+          </div>
+          <div class="platform-mini-item">
+            <div class="platform-mini-left">
+              <div class="platform-icon icon-facebook"><i class="fab fa-facebook-f"></i></div>
+              Facebook Followers
+            </div>
+            <div class="platform-mini-price">50 GHS/1k</div>
+          </div>
+          <div class="platform-mini-item">
+            <div class="platform-mini-left">
+              <div class="platform-icon icon-telegram"><i class="fab fa-telegram-plane"></i></div>
+              Telegram Members
+            </div>
+            <div class="platform-mini-price">80 GHS/1k</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar-inner">
+      <div class="stats-bar-item"><div class="stats-bar-num">50,000+</div><div class="stats-bar-label">Orders Completed</div></div>
+      <div class="stats-bar-item"><div class="stats-bar-num">6</div><div class="stats-bar-label">Platforms</div></div>
+      <div class="stats-bar-item"><div class="stats-bar-num">10 Min</div><div class="stats-bar-label">Avg. Delivery</div></div>
+      <div class="stats-bar-item"><div class="stats-bar-num">24/7</div><div class="stats-bar-label">Support</div></div>
+      <div class="stats-bar-item"><div class="stats-bar-num">GHS</div><div class="stats-bar-label">Pay in Cedis</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PLATFORMS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center">
+      <div class="tag">Platforms</div>
+      <h2 class="section-title mt-2">All Major Social Platforms</h2>
+      <p class="section-sub" style="margin:10px auto 0">Choose your platform and service to get started. All prices are in GHS.</p>
+    </div>
+    <div class="platform-cards" id="platformCards">
+      <div class="platform-card" onclick="selectPlatformCard('tiktok', this)">
+        <div class="platform-card-header">
+          <div class="platform-card-icon icon-tiktok"><i class="fab fa-tiktok" style="font-size:24px"></i></div>
+          <div><div class="platform-card-name">TikTok</div><div class="platform-card-count">8 services available</div></div>
+        </div>
+        <div class="platform-card-services">
+          <span class="service-chip">Followers</span><span class="service-chip">Video Likes</span><span class="service-chip">Views</span><span class="service-chip">Livestream</span>
+        </div>
+      </div>
+      <div class="platform-card" onclick="selectPlatformCard('instagram', this)">
+        <div class="platform-card-header">
+          <div class="platform-card-icon icon-instagram"><i class="fab fa-instagram" style="font-size:24px"></i></div>
+          <div><div class="platform-card-name">Instagram</div><div class="platform-card-count">5 services available</div></div>
+        </div>
+        <div class="platform-card-services">
+          <span class="service-chip">Followers</span><span class="service-chip">Post Likes</span><span class="service-chip">Reel Views</span><span class="service-chip">Comments</span>
+        </div>
+      </div>
+      <div class="platform-card" onclick="selectPlatformCard('facebook', this)">
+        <div class="platform-card-header">
+          <div class="platform-card-icon icon-facebook"><i class="fab fa-facebook-f" style="font-size:24px"></i></div>
+          <div><div class="platform-card-name">Facebook</div><div class="platform-card-count">6 services available</div></div>
+        </div>
+        <div class="platform-card-services">
+          <span class="service-chip">Page Followers</span><span class="service-chip">Post Likes</span><span class="service-chip">Video Views</span>
+        </div>
+      </div>
+      <div class="platform-card" onclick="selectPlatformCard('telegram', this)">
+        <div class="platform-card-header">
+          <div class="platform-card-icon icon-telegram"><i class="fab fa-telegram-plane" style="font-size:24px"></i></div>
+          <div><div class="platform-card-name">Telegram</div><div class="platform-card-count">3 services available</div></div>
+        </div>
+        <div class="platform-card-services">
+          <span class="service-chip">Channel Members</span><span class="service-chip">Post Views</span><span class="service-chip">Reactions</span>
+        </div>
+      </div>
+      <div class="platform-card" onclick="selectPlatformCard('youtube', this)">
+        <div class="platform-card-header">
+          <div class="platform-card-icon icon-youtube"><i class="fab fa-youtube" style="font-size:24px"></i></div>
+          <div><div class="platform-card-name">YouTube</div><div class="platform-card-count">4 services available</div></div>
+        </div>
+        <div class="platform-card-services">
+          <span class="service-chip">Subscribers</span><span class="service-chip">Views</span><span class="service-chip">Likes</span><span class="service-chip">Comments</span>
+        </div>
+      </div>
+      <div class="platform-card" onclick="selectPlatformCard('whatsapp', this)">
+        <div class="platform-card-header">
+          <div class="platform-card-icon icon-whatsapp"><i class="fab fa-whatsapp" style="font-size:24px"></i></div>
+          <div><div class="platform-card-name">WhatsApp</div><div class="platform-card-count">2 services available</div></div>
+        </div>
+        <div class="platform-card-services">
+          <span class="service-chip">Channel Followers</span><span class="service-chip">Emoji Reactions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="order-section" id="orderSection">
+  <div class="container">
+    <div class="tag">Place Order</div>
+    <h2 class="section-title mt-2">Create Your Order</h2>
+    <p class="section-sub">Fill in the details below to boost your social media presence.</p>
+    <div class="order-layout mt-3">
+      <div>
+        <div class="card">
+          <div class="form-group">
+            <label class="form-label">Platform <span>*</span></label>
+            <select class="form-control" id="platformSelect" onchange="onPlatformChange()">
+              <option value="">— Select Platform —</option>
+              <option value="tiktok">TikTok</option>
+              <option value="instagram">Instagram</option>
+              <option value="facebook">Facebook</option>
+              <option value="telegram">Telegram</option>
+              <option value="youtube">YouTube</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service <span>*</span></label>
+            <select class="form-control" id="serviceSelect" onchange="onServiceChange()" disabled>
+              <option value="">— Select Service —</option>
+            </select>
+          </div>
+          <div class="form-group" id="qualityGroup">
+            <label class="form-label">Quality</label>
+            <div class="quality-options" id="qualityOptions">
+              <label class="quality-option selected" onclick="selectQuality('average', this)">
+                <input type="radio" name="quality" value="average" checked>
+                <div class="quality-name">⭐ Average Quality</div>
+                <div class="quality-price" id="avgPriceLabel">0 GHS / 1k</div>
+              </label>
+              <label class="quality-option" onclick="selectQuality('premium', this)">
+                <input type="radio" name="quality" value="premium">
+                <div class="quality-name">💎 Premium Quality</div>
+                <div class="quality-price" id="premPriceLabel">0 GHS / 1k</div>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Account / Post Link <span>*</span></label>
+            <input type="url" class="form-control" id="accountLink" placeholder="e.g. https://www.tiktok.com/@username">
+            <div class="form-hint">Paste the full URL to your profile or post</div>
+          </div>
+          <div class="form-group" id="quantityGroup">
+            <label class="form-label">Quantity <span id="quantityRange">(Min: 100 — Max: 50,000)</span></label>
+            <input type="number" class="form-control" id="quantityInput" placeholder="Enter quantity" min="100" max="50000" oninput="updatePrice()">
+            <input type="range" class="quantity-slider" id="quantitySlider" min="100" max="50000" step="100" value="1000" oninput="syncSlider()">
+            <div class="quantity-display"><span id="minQty">Min: 100</span><span id="maxQty">Max: 50,000</span></div>
+          </div>
+          <div class="form-group" id="commentGroup" style="display:none">
+            <label class="form-label">Custom Comments Text</label>
+            <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your custom comments here (one per line)..."></textarea>
+            <div class="form-hint">Provide the exact text you want posted as comments</div>
+          </div>
+          <button class="btn btn-primary btn-lg" style="width:100%" onclick="placeOrder()">
+            <i class="fas fa-paper-plane"></i> Place Order
+          </button>
+          <p class="form-hint mt-1 text-center">Your details will be sent to our team via WhatsApp after ordering.</p>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <div>
+        <div class="order-summary">
+          <div class="order-summary-title"><i class="fas fa-receipt" style="color:var(--primary);margin-right:8px"></i>Order Summary</div>
+          <div class="price-per-k">
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:4px">Price per 1,000 units</div>
+            <div class="price-per-k-num" id="perKDisplay">0 GHS</div>
+          </div>
+          <div class="summary-row"><span class="label">Platform</span><span id="sumPlatform" style="font-weight:600">—</span></div>
+          <div class="summary-row"><span class="label">Service</span><span id="sumService" style="font-weight:600">—</span></div>
+          <div class="summary-row"><span class="label">Quality</span><span id="sumQuality" style="font-weight:600">Average</span></div>
+          <div class="summary-row"><span class="label">Quantity</span><span id="sumQty" style="font-weight:600">—</span></div>
+          <div class="summary-row total">
+            <span class="label">Total</span>
+            <span class="value" id="totalPrice">0.00 GHS</span>
+          </div>
+          <div class="delivery-badge">
+            <i class="fas fa-clock"></i>
+            Estimated Delivery: <strong id="deliveryTime">—</strong>
+          </div>
+          <div class="warning-box" id="warningBox" style="display:none">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="warningText"></span>
+          </div>
+        </div>
+
+        <!-- CLAIM CODE -->
+        <div class="card mt-2">
+          <div style="font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px"><i class="fas fa-tag" style="color:var(--primary)"></i> Claim Code</div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px">Have a promo or referral code? Redeem it for instant wallet credit.</p>
+          <div class="claim-input-group" style="display:flex;gap:8px">
+            <input type="text" class="form-control" id="claimCodeInput" placeholder="Enter code (e.g. WELCOME50)" style="flex:1;text-transform:uppercase">
+            <button class="btn btn-primary" onclick="claimCode()">Redeem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center">
+      <div class="tag">Process</div>
+      <h2 class="section-title mt-2">How It Works</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step"><div class="how-step-num">1</div><div class="how-step-title">Create Account</div><div class="how-step-desc">Sign up free and get your unique referral code instantly</div></div>
+      <div class="how-step"><div class="how-step-num">2</div><div class="how-step-title">Add Funds</div><div class="how-step-desc">Top up your wallet via MTN MoMo, Vodafone Cash or Paystack</div></div>
+      <div class="how-step"><div class="how-step-num">3</div><div class="how-step-title">Place Order</div><div class="how-step-desc">Select your platform, service, and enter your account link</div></div>
+      <div class="how-step"><div class="how-step-num">4</div><div class="how-step-title">Watch It Grow</div><div class="how-step-desc">We deliver your order within minutes to hours</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <div class="tag">Reviews</div>
+      <h2 class="section-title mt-2">What Our Customers Say</h2>
+      <p class="section-sub" style="margin:10px auto 0">Real reviews from verified Ghanaian customers</p>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"I got 5,000 TikTok followers in less than 30 minutes! Service is top-notch and very affordable. Will definitely order again. Global Booster is the real deal in Ghana."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#1A56DB">KO</div>
+          <div><div class="author-name">Kwame Owusu</div><div class="author-handle">@kwame.official · Accra</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Madam Ama here 😊 I boosted my business Instagram page and got 2,000 followers overnight. My sales increased because more people now see my posts. Thank you Global Booster!"</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#0D9488">AA</div>
+          <div><div class="author-name">Ama Asante</div><div class="author-handle">@ama.style · Kumasi</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★☆</div>
+        <div class="testimonial-text">"Very fast YouTube views service. I ordered 10,000 views for my music video and delivery started within 10 minutes. Great platform, easy to use with MoMo payment."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#DC2626">KB</div>
+          <div><div class="author-name">Kofi Boateng</div><div class="author-handle">@kboateng · Tema</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"I was skeptical at first but Global Booster proved me wrong. My Facebook page grew from 200 to 5,000 likes in 2 days. The referral program also gave me extra GHS!"</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#7C3AED">EA</div>
+          <div><div class="author-name">Efua Agyemang</div><div class="author-handle">@efua.gh · Cape Coast</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"The Telegram members service is excellent. Got 1,000 real-looking members for my group within hours. Customer support on WhatsApp is very responsive too. 10/10!"</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#059669">YM</div>
+          <div><div class="author-name">Yaw Mensah</div><div class="author-handle">@yaw.mensah · Takoradi</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Abena here! I love this service. The Instagram reel views boosted my content and it went viral. Prices are very reasonable — you can't find cheaper quality in Ghana. Highly recommend!"</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#B45309">AB</div>
+          <div><div class="author-name">Abena Bonsu</div><div class="author-handle">@abena.creates · Accra</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <div class="tag">FAQ</div>
+      <h2 class="section-title mt-2">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How do I deposit with MoMo? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Click "Add Funds" in your dashboard, enter your desired amount, then click "Pay with MoMo/Paystack". You will be redirected to our secure Paystack payment page where you can complete payment using MTN Mobile Money, Vodafone Cash, AirtelTigo Money, or any bank card. Your balance is updated within minutes of payment confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is my account safe? Will I get dropped followers? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">We never ask for your password. We only need your public profile link. Average quality followers may have slight drops over time — this is normal. Premium quality followers are higher retention and drop less. We recommend keeping your account public during order delivery for best results.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How long does delivery take? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Most TikTok services start within 10 minutes. Other platforms typically start within 1-3 hours and complete within 24 hours depending on the quantity ordered. Large orders (10,000+) may take 1-3 days for full completion. You can track your order status in your dashboard.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What is the referral program? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Share your unique referral link with friends. When a friend signs up and makes their first purchase, you earn 3 GHS and your friend receives 2 GHS bonus credit. You can refer up to 10 friends, earning a maximum of 30 GHS in referral bonuses. Your referral earnings are added automatically to your wallet.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you offer refunds? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">If an order fails to deliver within the promised timeframe, we will refund the amount to your Global Booster wallet. Wallet credits are non-refundable to your payment method but can be used for future orders. If you experience any issues, contact us on WhatsApp immediately.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I order for a private account? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">No. Your account must be set to PUBLIC during the entire delivery period. Private accounts cannot receive our services as we need to access your public profile to deliver the order. Please make your account public before placing an order and keep it public until delivery is complete.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What is a Claim Code? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Claim codes are special promotional codes issued by Global Booster or through special promotions. Enter your code in the "Claim Code" box on the order page or in your dashboard to instantly add funds to your wallet. Valid codes are one-time use only. Follow our WhatsApp channel for exclusive promo codes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <div class="tag">Contact Us</div>
+      <h2 class="section-title mt-2">We're Here to Help</h2>
+      <p class="section-sub" style="margin:10px auto 0">Reach out to our team anytime for support and inquiries</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="contact-detail-title">WhatsApp Support</div>
+            <div class="contact-detail-val">+233 500 643 544</div>
+            <a href="https://wa.me/233500643544" target="_blank" class="chat-btn mt-1"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-detail-title">Email</div>
+            <div class="contact-detail-val">support@globalbooster.gh</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="contact-detail-title">Support Hours</div>
+            <div class="contact-detail-val">Monday – Sunday: 7:00 AM – 11:00 PM GMT</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-detail-title">Location</div>
+            <div class="contact-detail-val">Accra, Ghana 🇬🇭</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:16px">Send a Message</h3>
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="contactName" placeholder="Kwame Mensah">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp</label>
+            <input type="tel" class="form-control" id="contactPhone" placeholder="+233 XX XXX XXXX">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" id="contactMessage" rows="4" placeholder="How can we help you?"></textarea>
+          </div>
+          <button class="btn btn-success" style="width:100%" onclick="sendContactWhatsApp()">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end home page -->
+
+<!-- ═══════════════════════════════════ DASHBOARD PAGE ═══════════════════════════════════ -->
+<div id="page-dashboard" class="page">
+  <div class="container">
+    <div class="dashboard">
+      <div class="dashboard-header flex justify-between items-center">
+        <div>
+          <h2>My Dashboard</h2>
+          <p class="text-muted" style="font-size:14px;margin-top:4px">Welcome back, <strong id="dashUserName">User</strong> · ID: <span id="dashUserId" style="color:var(--primary)"></span></p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-primary" onclick="openAddFunds()"><i class="fas fa-plus"></i> Add Funds</button>
+          <button class="btn btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:#EFF6FF"><i class="fas fa-wallet" style="color:var(--primary)"></i></div>
+          <div class="stat-card-value" id="dashBalance">0.00</div>
+          <div class="stat-card-label">Wallet Balance (GHS)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:#D1FAE5"><i class="fas fa-shopping-bag" style="color:var(--success)"></i></div>
+          <div class="stat-card-value" id="dashOrderCount">0</div>
+          <div class="stat-card-label">Total Orders</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:#FEF3C7"><i class="fas fa-users" style="color:var(--warning)"></i></div>
+          <div class="stat-card-value" id="dashReferralCount">0</div>
+          <div class="stat-card-label">Referrals (Max 10)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:#FEE2E2"><i class="fas fa-gift" style="color:var(--danger)"></i></div>
+          <div class="stat-card-value" id="dashReferralEarned">0.00</div>
+          <div class="stat-card-label">Referral Earnings (GHS)</div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- ORDER HISTORY -->
+        <div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+              <h3 style="font-size:1rem;font-weight:700">Order History</h3>
+              <button class="btn btn-primary btn-sm" onclick="showPage('home'); scrollToOrder()"><i class="fas fa-plus"></i> New Order</button>
+            </div>
+            <div class="table-wrapper">
+              <table id="orderTable">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Service</th>
+                    <th>Qty</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                  <tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:32px">No orders yet. Place your first order!</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ADD FUNDS CARD -->
+          <div class="card mt-2">
+            <div style="font-weight:700;margin-bottom:4px;font-size:1rem">💳 Add Funds to Wallet</div>
+            <p style="color:var(--text-muted);font-size:13px;margin-bottom:16px">Pay securely via MTN MoMo, Vodafone Cash, AirtelTigo or bank card.</p>
+            <div class="amount-presets">
+              <span class="amount-preset" onclick="selectPreset(this, 20)">20 GHS</span>
+              <span class="amount-preset" onclick="selectPreset(this, 50)">50 GHS</span>
+              <span class="amount-preset" onclick="selectPreset(this, 100)">100 GHS</span>
+              <span class="amount-preset" onclick="selectPreset(this, 200)">200 GHS</span>
+              <span class="amount-preset" onclick="selectPreset(this, 500)">500 GHS</span>
+            </div>
+            <div class="flex gap-1 mt-2" style="align-items:center">
+              <input type="number" class="form-control" id="addFundsAmt" placeholder="Custom amount (GHS)" style="flex:1">
+              <button class="btn btn-success" onclick="proceedToPaystack()"><i class="fas fa-credit-card"></i> Pay Now</button>
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:8px">Your User ID (<strong id="payUserId"></strong>) will be included so admin can verify your payment.</p>
+          </div>
+        </div>
+
+        <!-- REFERRAL + CLAIM -->
+        <div>
+          <div class="referral-card">
+            <div class="referral-title"><i class="fas fa-gift"></i> Referral Program</div>
+            <p style="font-size:13px;opacity:.8;margin-bottom:14px">Earn 3 GHS for each friend who buys. Your friend gets 2 GHS bonus!</p>
+            <div style="font-size:12px;opacity:.7;margin-bottom:6px">Your Referral Code</div>
+            <div class="referral-code">
+              <span class="referral-code-text" id="refCode">—</span>
+              <button class="btn btn-sm" style="background:rgba(255,255,255,.2);color:#fff;border:none" onclick="copyRefCode()"><i class="fas fa-copy"></i></button>
+            </div>
+            <div style="font-size:12px;opacity:.7;margin-bottom:6px">Your Referral Link</div>
+            <div class="referral-link-box" id="refLink">—</div>
+            <button class="btn btn-sm" style="background:rgba(255,255,255,.2);color:#fff;border:none;width:100%" onclick="copyRefLink()"><i class="fas fa-link"></i> Copy Link</button>
+            <div class="referral-stats">
+              <div class="referral-stat">
+                <div class="referral-stat-num" id="refCount">0</div>
+                <div class="referral-stat-label">Referrals</div>
+              </div>
+              <div class="referral-stat">
+                <div class="referral-stat-num" id="refEarned">0 GHS</div>
+                <div class="referral-stat-label">Earned</div>
+              </div>
+            </div>
+            <div style="font-size:12px;opacity:.7;margin-top:12px">Progress (Max 10 referrals)</div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="refProgress" style="width:0%"></div>
+            </div>
+            <div style="font-size:12px;opacity:.7;margin-top:6px">Max earnings: 30 GHS</div>
+
+            <div class="divider" style="border-color:rgba(255,255,255,.2)"></div>
+            <div class="referral-title" style="font-size:15px"><i class="fas fa-tag"></i> Claim a Code</div>
+            <p style="font-size:13px;opacity:.8;margin-bottom:10px">Enter a promo code to add instant funds to your wallet.</p>
+            <div class="claim-input-group">
+              <input type="text" class="claim-input" id="dashClaimCode" placeholder="ENTER CODE" style="text-transform:uppercase">
+              <button class="btn btn-sm" style="background:#38BDF8;color:#fff;border:none;white-space:nowrap" onclick="claimCodeDash()">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-text" style="font-size:22px">Global <span>Booster</span></div>
+        <p>Ghana's most trusted social media growth service. We help individuals and businesses grow their online presence affordably and securely — paid in GHS.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/233500643544" target="_blank" class="social-btn" style="color:#25D366"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn" style="color:#1877F2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" style="color:#E1306C"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" style="color:#FF0000"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-btn" style="color:#010101"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#" onclick="selectPlatformCard('tiktok')">TikTok Growth</a></li>
+          <li><a href="#" onclick="selectPlatformCard('instagram')">Instagram Growth</a></li>
+          <li><a href="#" onclick="selectPlatformCard('facebook')">Facebook Growth</a></li>
+          <li><a href="#" onclick="selectPlatformCard('youtube')">YouTube Growth</a></li>
+          <li><a href="#" onclick="selectPlatformCard('telegram')">Telegram Growth</a></li>
+          <li><a href="#" onclick="selectPlatformCard('whatsapp')">WhatsApp Growth</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#" onclick="scrollToSection('faq')">FAQ</a></li>
+          <li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
+          <li><a href="#" onclick="scrollToSection('testimonials')">Reviews</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showPolicy('terms')">Terms of Service</a></li>
+          <li><a href="#" onclick="showPolicy('privacy')">Privacy Policy</a></li>
+          <li><a href="#" onclick="showPolicy('refund')">Refund Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+        <div style="margin-top:20px">
+          <div class="footer-title">Contact</div>
+          <a href="https://wa.me/233500643544" target="_blank" style="color:#25D366;font-size:14px;display:flex;align-items:center;gap:6px;margin-bottom:6px"><i class="fab fa-whatsapp"></i> +233 500 643 544</a>
+          <p style="color:#64748B;font-size:13px">support@globalbooster.gh</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Global Booster. All rights reserved. Registered in Ghana.</p>
+      <div class="footer-legal">
+        <a href="#" onclick="showPolicy('terms')">Terms</a>
+        <a href="#" onclick="showPolicy('privacy')">Privacy</a>
+        <a href="#" onclick="showPolicy('refund')">Refunds</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════ LIVE CHAT BUBBLE ═══════════════════════════════════ -->
+<div class="chat-bubble" onclick="window.open('https://wa.me/233500643544','_blank')" title="Chat with us on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- ═══════════════════════════════════ AUTH MODAL ═══════════════════════════════════ -->
+<div class="modal-overlay hidden" id="authModal" onclick="closeModalOutside(event,'authModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="authModalTitle">Welcome to Global Booster</div>
+      <button class="modal-close" onclick="closeModal('authModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="loginTab" onclick="switchAuthTab('login')">Sign In</div>
+        <div class="auth-tab" id="registerTab" onclick="switchAuthTab('register')">Create Account</div>
+      </div>
+      <!-- LOGIN -->
+      <div id="loginForm">
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-control" id="loginEmail" placeholder="you@example.com"></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-control" id="loginPassword" placeholder="••••••••"></div>
+        <button class="btn btn-primary" style="width:100%;padding:13px" onclick="loginUser()"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+        <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:14px">Don't have an account? <a href="#" style="color:var(--primary);font-weight:600" onclick="switchAuthTab('register')">Register</a></p>
+      </div>
+      <!-- REGISTER -->
+      <div id="registerForm" style="display:none">
+        <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-control" id="regName" placeholder="Kwame Mensah"></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-control" id="regEmail" placeholder="you@example.com"></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-control" id="regPassword" placeholder="Min 6 characters"></div>
+        <div class="form-group"><label class="form-label">Referral Code (optional)</label><input type="text" class="form-control" id="regRefCode" placeholder="Friend's referral code" style="text-transform:uppercase"></div>
+        <button class="btn btn-primary" style="width:100%;padding:13px" onclick="registerUser()"><i class="fas fa-user-plus"></i> Create Account</button>
+        <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:14px">Already have an account? <a href="#" style="color:var(--primary);font-weight:600" onclick="switchAuthTab('login')">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ ADD FUNDS MODAL ═══════════════════════════════════ -->
+<div class="modal-overlay hidden" id="addFundsModal" onclick="closeModalOutside(event,'addFundsModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">💳 Add Funds to Wallet</div>
+      <button class="modal-close" onclick="closeModal('addFundsModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <p style="color:var(--text-muted);font-size:14px;margin-bottom:16px">Choose an amount and pay securely via Paystack (MoMo, Card, etc.)</p>
+      <div class="amount-presets mb-2">
+        <span class="amount-preset" onclick="selectModalPreset(this, 20)">20 GHS</span>
+        <span class="amount-preset" onclick="selectModalPreset(this, 50)">50 GHS</span>
+        <span class="amount-preset" onclick="selectModalPreset(this, 100)">100 GHS</span>
+        <span class="amount-preset" onclick="selectModalPreset(this, 200)">200 GHS</span>
+        <span class="amount-preset" onclick="selectModalPreset(this, 500)">500 GHS</span>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Custom Amount (GHS)</label>
+        <input type="number" class="form-control" id="modalFundsAmt" placeholder="Enter amount" min="5">
+      </div>
+      <div style="background:var(--primary-light);border-radius:var(--radius-sm);padding:12px 14px;margin:12px 0;font-size:13px">
+        <strong>Your User ID: <span id="modalUserId" style="color:var(--primary)">—</span></strong><br>
+        <span style="color:var(--text-muted)">This ID will be sent with your payment so admin can credit your account.</span>
+      </div>
+      <button class="btn btn-success btn-lg" style="width:100%" onclick="confirmAddFunds()">
+        <i class="fas fa-lock"></i> Proceed to Secure Payment
+      </button>
+      <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:10px">Powered by Paystack · 100% Secure</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ ADMIN MODAL ═══════════════════════════════════ -->
+<div class="modal-overlay hidden" id="adminLoginModal" onclick="closeModalOutside(event,'adminLoginModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">🔐 Admin Access</div>
+      <button class="modal-close" onclick="closeModal('adminLoginModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">Admin Password</label><input type="password" class="form-control" id="adminPassword" placeholder="Enter admin password"></div>
+      <button class="btn btn-primary" style="width:100%" onclick="adminLogin()"><i class="fas fa-shield-alt"></i> Access Admin Panel</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden" id="adminModal" onclick="closeModalOutside(event,'adminModal')">
+  <div class="modal modal-lg" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">⚙️ Admin Panel — Global Booster</div>
+      <button class="modal-close" onclick="closeModal('adminModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="admin-tabs">
+        <div class="admin-tab active" onclick="switchAdminTab('overview', this)">Overview</div>
+        <div class="admin-tab" onclick="switchAdminTab('orders', this)">All Orders</div>
+        <div class="admin-tab" onclick="switchAdminTab('users', this)">Users</div>
+        <div class="admin-tab" onclick="switchAdminTab('funds', this)">Fund Requests</div>
+        <div class="admin-tab" onclick="switchAdminTab('codes', this)">Claim Codes</div>
+      </div>
+
+      <!-- OVERVIEW TAB -->
+      <div id="adminTab-overview">
+        <div class="grid-4 mb-3">
+          <div class="admin-stat"><div class="admin-stat-num" id="adminTotalUsers">0</div><div class="admin-stat-label">Total Users</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="adminTotalOrders">0</div><div class="admin-stat-label">Total Orders</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="adminRevenue">0</div><div class="admin-stat-label">Total Revenue (GHS)</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="adminPending">0</div><div class="admin-stat-label">Pending Orders</div></div>
+        </div>
+        <div class="card" style="background:var(--bg)">
+          <strong>WhatsApp Notifications</strong>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:6px">Admin number: +233500643544 receives notifications for every fund request and new order automatically via WhatsApp link.</p>
+        </div>
+      </div>
+
+      <!-- ORDERS TAB -->
+      <div id="adminTab-orders" style="display:none">
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Order ID</th><th>User</th><th>Platform</th><th>Service</th><th>Qty</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="adminOrdersBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- USERS TAB -->
+      <div id="adminTab-users" style="display:none">
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>User ID</th><th>Name</th><th>Email</th><th>Balance</th><th>Orders</th><th>Joined</th><th>Action</th></tr></thead>
+            <tbody id="adminUsersBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FUND REQUESTS TAB -->
+      <div id="adminTab-funds" style="display:none">
+        <p style="color:var(--text-muted);font-size:14px;margin-bottom:16px">Generate a fund-add link for a user after confirming their Paystack payment.</p>
+        <div class="card" style="background:var(--bg)">
+          <div class="form-group"><label class="form-label">User ID</label><input type="text" class="form-control" id="fundUserId" placeholder="e.g. GB1001"></div>
+          <div class="form-group"><label class="form-label">Amount to Credit (GHS)</label><input type="number" class="form-control" id="fundAmount" placeholder="50"></div>
+          <button class="btn btn-primary" onclick="generateFundLink()"><i class="fas fa-link"></i> Generate Fund Link</button>
+          <div id="generatedFundLink" style="margin-top:14px;display:none">
+            <div class="generated-code" id="fundLinkDisplay"></div>
+            <button class="btn btn-sm btn-outline mt-1" onclick="copyFundLink()"><i class="fas fa-copy"></i> Copy Link</button>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:6px">Share this link with the user. When they click it, funds will be added to their account.</p>
+          </div>
+        </div>
+        <div class="table-wrapper mt-2">
+          <table>
+            <thead><tr><th>User ID</th><th>Name</th><th>Requested</th><th>Time</th><th>Status</th></tr></thead>
+            <tbody id="fundRequestsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CLAIM CODES TAB -->
+      <div id="adminTab-codes" style="display:none">
+        <p style="color:var(--text-muted);font-size:14px;margin-bottom:16px">Generate promotional claim codes for users.</p>
+        <div class="card" style="background:var(--bg)">
+          <div class="code-gen-form">
+            <div class="form-group"><label class="form-label">Code (leave blank for auto)</label><input type="text" class="form-control" id="newCodeInput" placeholder="e.g. BOOST50" style="text-transform:uppercase"></div>
+            <div class="form-group"><label class="form-label">Amount (GHS)</label><input type="number" class="form-control" id="newCodeAmount" placeholder="50"></div>
+            <button class="btn btn-primary" style="margin-top:22px;white-space:nowrap" onclick="generateClaimCode()"><i class="fas fa-plus"></i> Generate</button>
+          </div>
+          <div id="generatedCode" style="display:none"><div class="generated-code" id="generatedCodeText"></div></div>
+        </div>
+        <div class="table-wrapper mt-2">
+          <table>
+            <thead><tr><th>Code</th><th>Amount</th><th>Status</th><th>Used By</th></tr></thead>
+            <tbody id="claimCodesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POLICY MODAL -->
+<div class="modal-overlay hidden" id="policyModal" onclick="closeModalOutside(event,'policyModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="policyTitle">Policy</div>
+      <button class="modal-close" onclick="closeModal('policyModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body" id="policyContent" style="font-size:14px;color:var(--text-muted);line-height:1.8"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════ DATA ═══════════════════════════════════
+const ADMIN_PASSWORD = 'globalboostr2024';
+const WHATSAPP_NUMBER = '233500643544';
+const PAYSTACK_URL = 'https://paystack.shop/pay/globle-booter';
+
+const SERVICES = {
+  tiktok: {
+    name: 'TikTok',
+    icon: 'fab fa-tiktok',
+    delivery: '10 Minutes',
+    warning: 'Ensure your account is PUBLIC before ordering. Do not change your username during delivery.',
+    services: [
+      { id: 'tk_followers', name: 'Followers', avgPrice: 85, premMult: 1.03, min: 100, max: 50000, unit: 'followers' },
+      { id: 'tk_likes', name: 'Video Likes', avgPrice: 55, premMult: 1.03, min: 100, max: 100000, unit: 'likes' },
+      { id: 'tk_views', name: 'Video Views', avgPrice: 10, premMult: 1.03, min: 1000, max: 500000, unit: 'views' },
+      { id: 'tk_saves', name: 'Video Saves', avgPrice: 5, premMult: 1.03, min: 100, max: 50000, unit: 'saves' },
+      { id: 'tk_shares', name: 'Video Shares', avgPrice: 5, premMult: 1.03, min: 100, max: 50000, unit: 'shares' },
+      { id: 'tk_comments', name: 'Custom Comments', avgPrice: 20, premMult: 1.0, min: 10, max: 500, unit: 'comments', isComment: true, priceUnit: 10, unitLabel: '/10 comments' },
+      { id: 'tk_live_likes', name: 'Livestream Likes', avgPrice: 6, premMult: 1.03, min: 100, max: 50000, unit: 'likes' },
+      { id: 'tk_live_viewers', name: 'Livestream Viewers', avgPrice: 85, premMult: 1.03, min: 100, max: 10000, unit: 'viewers' },
+    ]
+  },
+  instagram: {
+    name: 'Instagram',
+    icon: 'fab fa-instagram',
+    delivery: '1–12 Hours',
+    warning: 'Account must be PUBLIC during delivery. Do not purchase followers for a private account.',
+    services: [
+      { id: 'ig_followers', name: 'Followers', avgPrice: 50, premMult: 1.05, min: 100, max: 50000, unit: 'followers' },
+      { id: 'ig_likes', name: 'Post Likes', avgPrice: 10, premMult: 1.03, min: 100, max: 100000, unit: 'likes' },
+      { id: 'ig_views', name: 'Video / Reel Views', avgPrice: 5, premMult: 1.03, min: 1000, max: 500000, unit: 'views' },
+      { id: 'ig_comments', name: 'Custom Comments', avgPrice: 5, premMult: 1.0, min: 10, max: 500, unit: 'comments', isComment: true, priceUnit: 10, unitLabel: '/10 comments' },
+      { id: 'ig_story', name: 'Story Views', avgPrice: 5, premMult: 1.03, min: 100, max: 100000, unit: 'views' },
+    ]
+  },
+  facebook: {
+    name: 'Facebook',
+    icon: 'fab fa-facebook-f',
+    delivery: '2–24 Hours',
+    warning: 'Provide the direct URL to your page, profile or post. Keep page/post public during delivery.',
+    services: [
+      { id: 'fb_pgfollowers', name: 'Page Followers', avgPrice: 50, premMult: 1.03, min: 100, max: 50000, unit: 'followers' },
+      { id: 'fb_prfollowers', name: 'Profile Followers', avgPrice: 50, premMult: 1.03, min: 100, max: 50000, unit: 'followers' },
+      { id: 'fb_likes', name: 'Post Likes', avgPrice: 7, premMult: 1.03, min: 100, max: 100000, unit: 'likes' },
+      { id: 'fb_members', name: 'Group Members', avgPrice: 50, premMult: 1.03, min: 100, max: 50000, unit: 'members' },
+      { id: 'fb_views', name: 'Video Views', avgPrice: 5, premMult: 1.03, min: 1000, max: 500000, unit: 'views' },
+      { id: 'fb_comments', name: 'Custom Comments', avgPrice: 5, premMult: 1.03, min: 10, max: 500, unit: 'comments', isComment: true, priceUnit: 10, unitLabel: '/10 comments' },
+    ]
+  },
+  telegram: {
+    name: 'Telegram',
+    icon: 'fab fa-telegram-plane',
+    delivery: '1–6 Hours',
+    warning: 'Your Telegram group or channel must be PUBLIC. Provide the full t.me link.',
+    services: [
+      { id: 'tg_members', name: 'Group / Channel Members', avgPrice: 80, premMult: 1.05, min: 100, max: 50000, unit: 'members' },
+      { id: 'tg_views', name: 'Post Views', avgPrice: 3, premMult: 1.03, min: 1000, max: 500000, unit: 'views' },
+      { id: 'tg_reactions', name: 'Post Reactions', avgPrice: 10, premMult: 1.03, min: 100, max: 50000, unit: 'reactions' },
+    ]
+  },
+  youtube: {
+    name: 'YouTube',
+    icon: 'fab fa-youtube',
+    delivery: '6–48 Hours',
+    warning: 'YouTube channel must be public. Do not delete the video during delivery. Views must comply with YouTube ToS.',
+    services: [
+      { id: 'yt_subs', name: 'Subscribers', avgPrice: 550, premMult: 1.03, min: 100, max: 10000, unit: 'subscribers' },
+      { id: 'yt_views', name: 'Video Views', avgPrice: 30, premMult: 1.05, min: 1000, max: 500000, unit: 'views' },
+      { id: 'yt_likes', name: 'Video Likes', avgPrice: 60, premMult: 1.07, min: 100, max: 50000, unit: 'likes' },
+      { id: 'yt_comments', name: 'Custom Comments', avgPrice: 20, premMult: 1.03, min: 10, max: 500, unit: 'comments', isComment: true, priceUnit: 10, unitLabel: '/10 comments' },
+    ]
+  },
+  whatsapp: {
+    name: 'WhatsApp',
+    icon: 'fab fa-whatsapp',
+    delivery: '2–24 Hours',
+    warning: 'Provide the direct WhatsApp channel link. Channel must be public.',
+    services: [
+      { id: 'wa_followers', name: 'Channel Followers (Global)', avgPrice: 50, premMult: 1.05, min: 100, max: 50000, unit: 'followers' },
+      { id: 'wa_reactions', name: 'Channel Emoji Reactions', avgPrice: 30, premMult: 1.0, min: 100, max: 50000, unit: 'reactions' },
+    ]
+  }
+};
+
+// ═══════════════════════════════════ STATE ═══════════════════════════════════
+let currentPlatform = '';
+let currentService = null;
+let currentQuality = 'average';
+let selectedFundAmount = 0;
+let logoClickCount = 0;
+let logoClickTimer = null;
+
+function getUsers() { return JSON.parse(localStorage.getItem('gb_users') || '[]'); }
+function saveUsers(u) { localStorage.setItem('gb_users', JSON.stringify(u)); }
+function getOrders() { return JSON.parse(localStorage.getItem('gb_orders') || '[]'); }
+function saveOrders(o) { localStorage.setItem('gb_orders', JSON.stringify(o)); }
+function getCodes() { return JSON.parse(localStorage.getItem('gb_codes') || JSON.stringify([
+  { code: 'WELCOME50', amount: 50, used: false, usedBy: null },
+  { code: 'BOOST100', amount: 100, used: false, usedBy: null },
+  { code: 'START25', amount: 25, used: false, usedBy: null }
+])); }
+function saveCodes(c) { localStorage.setItem('gb_codes', JSON.stringify(c)); }
+function getFundRequests() { return JSON.parse(localStorage.getItem('gb_funds') || '[]'); }
+function saveFundRequests(f) { localStorage.setItem('gb_funds', JSON.stringify(f)); }
+function getCurrentUser() { const id = localStorage.getItem('gb_currentUser'); if (!id) return null; return getUsers().find(u => u.id === id) || null; }
+function setCurrentUser(u) { if (u) localStorage.setItem('gb_currentUser', u.id); else localStorage.removeItem('gb_currentUser'); }
+function updateUser(updated) { const users = getUsers(); const idx = users.findIndex(u => u.id === updated.id); if (idx > -1) { users[idx] = updated; saveUsers(users); } }
+
+// ═══════════════════════════════════ AUTH ═══════════════════════════════════
+function openAuth(tab) { openModal('authModal'); switchAuthTab(tab); }
+function switchAuthTab(tab) {
+  document.getElementById('loginTab').classList.toggle('active', tab === 'login');
+  document.getElementById('registerTab').classList.toggle('active', tab === 'register');
+  document.getElementById('loginForm').style.display = tab === 'login' ? '' : 'none';
+  document.getElementById('registerForm').style.display = tab === 'register' ? '' : 'none';
+}
+
+function generateId() { return 'GB' + (1000 + getUsers().length + 1); }
+function generateRefCode() { return 'REF' + Math.random().toString(36).substring(2,8).toUpperCase(); }
+
+function registerUser() {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('regPassword').value;
+  const refCode = document.getElementById('regRefCode').value.trim().toUpperCase();
+  if (!name || !email || !pass) return toast('Please fill all fields', 'error');
+  if (pass.length < 6) return toast('Password must be at least 6 characters', 'error');
+  const users = getUsers();
+  if (users.find(u => u.email === email)) return toast('Email already registered', 'error');
+  
+  const newUser = { id: generateId(), name, email, password: pass, balance: 0, referralCode: generateRefCode(), referrals: 0, referralEarned: 0, joinDate: new Date().toLocaleDateString() };
+  
+  // Handle referral
+  if (refCode) {
+    const referrer = users.find(u => u.referralCode === refCode);
+    if (referrer && referrer.referrals < 10) {
+      referrer.referrals++;
+      referrer.referralEarned += 3;
+      referrer.balance += 3;
+      newUser.balance += 2;
+      const idx = users.findIndex(u => u.id === referrer.id);
+      users[idx] = referrer;
+    }
+  }
+  
+  users.push(newUser);
+  saveUsers(users);
+  setCurrentUser(newUser);
+  closeModal('authModal');
+  toast('Account created! Welcome to Global Booster 🚀', 'success');
+  onUserLogin(newUser);
+}
+
+function loginUser() {
+  const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('loginPassword').value;
+  if (!email || !pass) return toast('Please fill all fields', 'error');
+  const users = getUsers();
+  const user = users.find(u => u.email === email && u.password === pass);
+  if (!user) return toast('Invalid email or password', 'error');
+  setCurrentUser(user);
+  closeModal('authModal');
+  toast('Welcome back, ' + user.name.split(' ')[0] + '! 👋', 'success');
+  onUserLogin(user);
+}
+
+function onUserLogin(user) {
+  document.getElementById('navRight').classList.add('hidden');
+  document.getElementById('navUser').classList.remove('hidden');
+  document.getElementById('dashLink').style.display = '';
+  updateNavUser(user);
+}
+
+function updateNavUser(user) {
+  if (!user) return;
+  document.getElementById('navBalance').textContent = parseFloat(user.balance).toFixed(2);
+  document.getElementById('userAvatar').textContent = user.name.charAt(0).toUpperCase();
+}
+
+function logout() {
+  setCurrentUser(null);
+  document.getElementById('navRight').classList.remove('hidden');
+  document.getElementById('navUser').classList.add('hidden');
+  document.getElementById('dashLink').style.display = 'none';
+  showPage('home');
+  toast('Logged out successfully', 'info');
+}
+
+function toggleUserMenu() {
+  const user = getCurrentUser();
+  if (user) showPage('dashboard');
+}
+
+// ═══════════════════════════════════ PAGES ═══════════════════════════════════
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-' + page);
+  if (el) el.classList.add('active');
+  
+  if (page === 'dashboard') {
+    const user = getCurrentUser();
+    if (!user) { openAuth('login'); showPage('home'); return; }
+    loadDashboard(user);
+  }
+  
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  if (page === 'home') document.querySelectorAll('.nav-link')[0].classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function scrollToOrder() {
+  showPage('home');
+  setTimeout(() => {
+    document.getElementById('orderSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function scrollToSection(id) {
+  showPage('home');
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// ═══════════════════════════════════ PLATFORM / ORDER ═══════════════════════
+function selectPlatformCard(platform, el) {
+  document.querySelectorAll('.platform-card').forEach(c => c.classList.remove('selected'));
+  if (el) el.classList.add('selected');
+  document.getElementById('platformSelect').value = platform;
+  onPlatformChange();
+  scrollToOrder();
+}
+
+function onPlatformChange() {
+  const platform = document.getElementById('platformSelect').value;
+  currentPlatform = platform;
+  const serviceSelect = document.getElementById('serviceSelect');
+  serviceSelect.innerHTML = '<option value="">— Select Service —</option>';
+  serviceSelect.disabled = !platform;
+  
+  if (platform && SERVICES[platform]) {
+    SERVICES[platform].services.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s.id;
+      opt.textContent = s.name;
+      serviceSelect.appendChild(opt);
+    });
+  }
+  currentService = null;
+  resetSummary();
+  document.getElementById('sumPlatform').textContent = platform ? SERVICES[platform].name : '—';
+}
+
+function onServiceChange() {
+  const serviceId = document.getElementById('serviceSelect').value;
+  if (!serviceId || !currentPlatform) return;
+  
+  const svc = SERVICES[currentPlatform].services.find(s => s.id === serviceId);
+  currentService = svc;
+  
+  const isComment = svc.isComment;
+  document.getElementById('commentGroup').style.display = isComment ? '' : 'none';
+  document.getElementById('qualityGroup').style.display = isComment ? 'none' : '';
+  
+  // Update price labels
+  const avgPer1k = svc.avgPrice;
+  const premPer1k = isComment ? null : +(svc.avgPrice * svc.premMult).toFixed(2);
+  
+  if (isComment) {
+    document.getElementById('avgPriceLabel').textContent = avgPer1k + ' GHS' + (svc.unitLabel || '/10 comments');
+  } else {
+    document.getElementById('avgPriceLabel').textContent = avgPer1k + ' GHS / 1k';
+    document.getElementById('premPriceLabel').textContent = premPer1k + ' GHS / 1k';
+  }
+  
+  // Update quantity
+  const minQ = svc.min;
+  const maxQ = svc.max;
+  document.getElementById('quantityRange').textContent = '(Min: ' + minQ.toLocaleString() + ' — Max: ' + maxQ.toLocaleString() + ')';
+  document.getElementById('quantitySlider').min = minQ;
+  document.getElementById('quantitySlider').max = maxQ;
+  document.getElementById('quantitySlider').value = Math.min(1000, maxQ);
+  document.getElementById('quantityInput').min = minQ;
+  document.getElementById('quantityInput').max = maxQ;
+  document.getElementById('quantityInput').value = Math.min(1000, maxQ);
+  document.getElementById('minQty').textContent = 'Min: ' + minQ.toLocaleString();
+  document.getElementById('maxQty').textContent = 'Max: ' + maxQ.toLocaleString();
+  
+  document.getElementById('sumService').textContent = svc.name;
+  
+  // Warning
+  const warn = SERVICES[currentPlatform].warning;
+  if (warn) {
+    document.getElementById('warningBox').style.display = 'flex';
+    document.getElementById('warningText').textContent = warn;
+  } else {
+    document.getElementById('warningBox').style.display = 'none';
+  }
+  
+  document.getElementById('deliveryTime').textContent = SERVICES[currentPlatform].delivery;
+  updatePrice();
+}
+
+function selectQuality(q, el) {
+  currentQuality = q;
+  document.querySelectorAll('.quality-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('sumQuality').textContent = q === 'average' ? 'Average' : 'Premium';
+  updatePrice();
+}
+
+function syncSlider() {
+  const val = document.getElementById('quantitySlider').value;
+  document.getElementById('quantityInput').value = val;
+  updatePrice();
+}
+
+function updatePrice() {
+  const qty = parseInt(document.getElementById('quantityInput').value) || 0;
+  document.getElementById('quantitySlider').value = qty;
+  document.getElementById('sumQty').textContent = qty ? qty.toLocaleString() : '—';
+  
+  if (!currentService || !qty) {
+    document.getElementById('totalPrice').textContent = '0.00 GHS';
+    document.getElementById('perKDisplay').textContent = '0 GHS';
+    return;
+  }
+  
+  let pricePerUnit;
+  const svc = currentService;
+  
+  if (svc.isComment) {
+    pricePerUnit = (svc.avgPrice / svc.priceUnit);
+    document.getElementById('perKDisplay').textContent = svc.avgPrice + ' GHS' + (svc.unitLabel || '/10 comments');
+  } else {
+    const per1k = currentQuality === 'premium' ? +(svc.avgPrice * svc.premMult).toFixed(2) : svc.avgPrice;
+    pricePerUnit = per1k / 1000;
+    document.getElementById('perKDisplay').textContent = per1k + ' GHS / 1k';
+  }
+  
+  const total = (qty * pricePerUnit).toFixed(2);
+  document.getElementById('totalPrice').textContent = parseFloat(total).toLocaleString('en-GH', {minimumFractionDigits:2}) + ' GHS';
+}
+
+function resetSummary() {
+  document.getElementById('sumService').textContent = '—';
+  document.getElementById('sumQuality').textContent = 'Average';
+  document.getElementById('sumQty').textContent = '—';
+  document.getElementById('totalPrice').textContent = '0.00 GHS';
+  document.getElementById('perKDisplay').textContent = '0 GHS';
+  document.getElementById('deliveryTime').textContent = '—';
+  document.getElementById('warningBox').style.display = 'none';
+}
+
+function placeOrder() {
+  const user = getCurrentUser();
+  if (!user) { openAuth('login'); toast('Please sign in to place an order', 'info'); return; }
+  
+  const platform = document.getElementById('platformSelect').value;
+  const serviceId = document.getElementById('serviceSelect').value;
+  const link = document.getElementById('accountLink').value.trim();
+  const qty = parseInt(document.getElementById('quantityInput').value);
+  
+  if (!platform) return toast('Please select a platform', 'error');
+  if (!serviceId) return toast('Please select a service', 'error');
+  if (!link) return toast('Please enter your account/post link', 'error');
+  if (!qty || qty < currentService.min) return toast('Quantity must be at least ' + currentService.min, 'error');
+  
+  const svc = currentService;
+  let total;
+  if (svc.isComment) {
+    total = +(qty * (svc.avgPrice / svc.priceUnit)).toFixed(2);
+  } else {
+    const per1k = currentQuality === 'premium' ? +(svc.avgPrice * svc.premMult).toFixed(2) : svc.avgPrice;
+    total = +(qty * per1k / 1000).toFixed(2);
+  }
+  
+  if (user.balance < total) {
+    toast('Insufficient balance. Please add funds.', 'error');
+    openAddFunds();
+    return;
+  }
+  
+  // Deduct balance
+  user.balance = +(user.balance - total).toFixed(2);
+  updateUser(user);
+  updateNavUser(user);
+  
+  // Create order
+  const orderId = 'GB' + Date.now().toString().slice(-6);
+  const order = {
+    id: orderId,
+    userId: user.id,
+    userName: user.name,
+    platform: SERVICES[platform].name,
+    service: svc.name,
+    quality: svc.isComment ? 'Custom' : (currentQuality === 'premium' ? 'Premium' : 'Average'),
+    quantity: qty,
+    link,
+    price: total,
+    status: 'Processing',
+    date: new Date().toLocaleDateString()
+  };
+  
+  const orders = getOrders();
+  orders.unshift(order);
+  saveOrders(orders);
+  
+  // WhatsApp notification to admin
+  const msg = encodeURIComponent(
+    `🆕 NEW ORDER — Global Booster\n\n` +
+    `Order ID: ${orderId}\n` +
+    `User: ${user.name} (${user.id})\n` +
+    `Platform: ${SERVICES[platform].name}\n` +
+    `Service: ${svc.name}\n` +
+    `Quality: ${order.quality}\n` +
+    `Quantity: ${qty.toLocaleString()}\n` +
+    `Link: ${link}\n` +
+    `Amount: ${total} GHS\n` +
+    `Date: ${order.date}`
+  );
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+  
+  toast(`Order #${orderId} placed! ✅ Processing started.`, 'success');
+  document.getElementById('accountLink').value = '';
+  document.getElementById('quantityInput').value = '';
+}
+
+// ═══════════════════════════════════ DASHBOARD ═══════════════════════════════
+function loadDashboard(user) {
+  document.getElementById('dashUserName').textContent = user.name;
+  document.getElementById('dashUserId').textContent = user.id;
+  document.getElementById('dashBalance').textContent = parseFloat(user.balance).toFixed(2);
+  document.getElementById('payUserId').textContent = user.id;
+  
+  const orders = getOrders().filter(o => o.userId === user.id);
+  document.getElementById('dashOrderCount').textContent = orders.length;
+  document.getElementById('dashReferralCount').textContent = user.referrals || 0;
+  document.getElementById('dashReferralEarned').textContent = parseFloat(user.referralEarned || 0).toFixed(2);
+  
+  // Referral
+  document.getElementById('refCode').textContent = user.referralCode;
+  const refLink = window.location.href.split('?')[0] + '?ref=' + user.referralCode;
+  document.getElementById('refLink').textContent = refLink;
+  document.getElementById('refCount').textContent = user.referrals || 0;
+  document.getElementById('refEarned').textContent = (user.referralEarned || 0) + ' GHS';
+  const pct = ((user.referrals || 0) / 10) * 100;
+  document.getElementById('refProgress').style.width = pct + '%';
+  
+  // Order table
+  const tbody = document.getElementById('orderTableBody');
+  if (orders.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:32px">No orders yet. Place your first order!</td></tr>';
+  } else {
+    tbody.innerHTML = orders.map(o => `
+      <tr>
+        <td><span class="order-id">${o.id}</span></td>
+        <td>${o.platform} · ${o.service}</td>
+        <td>${Number(o.quantity).toLocaleString()}</td>
+        <td><strong>${o.price} GHS</strong></td>
+        <td><span class="badge ${o.status === 'Completed' ? 'badge-success' : o.status === 'Processing' ? 'badge-warning' : 'badge-primary'}">${o.status}</span></td>
+        <td>${o.date}</td>
+      </tr>
+    `).join('');
+  }
+}
+
+function copyRefCode() {
+  const user = getCurrentUser();
+  if (!user) return;
+  navigator.clipboard.writeText(user.referralCode).then(() => toast('Referral code copied!', 'success'));
+}
+
+function copyRefLink() {
+  const user = getCurrentUser();
+  if (!user) return;
+  const link = window.location.href.split('?')[0] + '?ref=' + user.referralCode;
+  navigator.clipboard.writeText(link).then(() => toast('Referral link copied!', 'success'));
+}
+
+// ═══════════════════════════════════ CLAIM CODE ═══════════════════════════════
+function doClaimCode(inputId) {
+  const user = getCurrentUser();
+  if (!user) { openAuth('login'); return; }
+  const code = document.getElementById(inputId).value.trim().toUpperCase();
+  if (!code) return toast('Please enter a code', 'error');
+  
+  const codes = getCodes();
+  const found = codes.find(c => c.code === code && !c.used);
+  if (!found) return toast('Invalid or already used code', 'error');
+  
+  found.used = true;
+  found.usedBy = user.id;
+  saveCodes(codes);
+  
+  user.balance = +(user.balance + found.amount).toFixed(2);
+  updateUser(user);
+  updateNavUser(user);
+  if (document.getElementById('page-dashboard').classList.contains('active')) loadDashboard(getCurrentUser());
+  
+  document.getElementById(inputId).value = '';
+  toast(`✅ Code redeemed! ${found.amount} GHS added to your wallet.`, 'success');
+}
+
+function claimCode() { doClaimCode('claimCodeInput'); }
+function claimCodeDash() { doClaimCode('dashClaimCode'); }
+
+// ═══════════════════════════════════ ADD FUNDS ═══════════════════════════════
+function openAddFunds() {
+  const user = getCurrentUser();
+  if (!user) { openAuth('login'); return; }
+  document.getElementById('modalUserId').textContent = user.id;
+  openModal('addFundsModal');
+}
+
+function selectPreset(el, amt) {
+  document.querySelectorAll('.amount-preset').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('addFundsAmt').value = amt;
+  selectedFundAmount = amt;
+}
+
+function selectModalPreset(el, amt) {
+  document.querySelectorAll('#addFundsModal .amount-preset').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('modalFundsAmt').value = amt;
+  selectedFundAmount = amt;
+}
+
+function proceedToPaystack() {
+  const amt = document.getElementById('addFundsAmt').value;
+  const user = getCurrentUser();
+  if (!user) return;
+  if (!amt || amt < 5) return toast('Minimum amount is 5 GHS', 'error');
+  
+  // Log fund request
+  const reqs = getFundRequests();
+  reqs.unshift({ userId: user.id, userName: user.name, amount: amt, time: new Date().toLocaleString(), status: 'Pending' });
+  saveFundRequests(reqs);
+  
+  // Notify admin
+  const msg = encodeURIComponent(`💰 FUND REQUEST — Global Booster\n\nUser: ${user.name}\nID: ${user.id}\nAmount: ${amt} GHS\nTime: ${new Date().toLocaleString()}\n\nPlease verify Paystack payment and credit account.`);
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+  
+  // Redirect to Paystack
+  setTimeout(() => {
+    window.open(PAYSTACK_URL + '?ref=' + user.id + '&amount=' + amt, '_blank');
+  }, 500);
+  
+  toast('Redirecting to payment... Admin has been notified.', 'info');
+}
+
+function confirmAddFunds() {
+  const amt = document.getElementById('modalFundsAmt').value;
+  const user = getCurrentUser();
+  if (!user) return;
+  if (!amt || amt < 5) return toast('Minimum amount is 5 GHS', 'error');
+  
+  const reqs = getFundRequests();
+  reqs.unshift({ userId: user.id, userName: user.name, amount: amt, time: new Date().toLocaleString(), status: 'Pending' });
+  saveFundRequests(reqs);
+  
+  const msg = encodeURIComponent(`💰 FUND REQUEST — Global Booster\n\nUser: ${user.name}\nID: ${user.id}\nAmount: ${amt} GHS\nTime: ${new Date().toLocaleString()}\n\nPlease verify Paystack payment and credit account.`);
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+  
+  setTimeout(() => {
+    window.open(PAYSTACK_URL + '?ref=' + user.id + '&amount=' + amt, '_blank');
+  }, 500);
+  
+  closeModal('addFundsModal');
+  toast('Admin notified! Complete payment on Paystack.', 'success');
+}
+
+// ═══════════════════════════════════ ADMIN ═══════════════════════════════════
+document.getElementById('navLogo').addEventListener('click', () => {
+  logoClickCount++;
+  if (logoClickTimer) clearTimeout(logoClickTimer);
+  logoClickTimer = setTimeout(() => { logoClickCount = 0; }, 2000);
+  if (logoClickCount >= 3) {
+    logoClickCount = 0;
+    openModal('adminLoginModal');
+  }
+});
+
+function adminLogin() {
+  const pass = document.getElementById('adminPassword').value;
+  if (pass !== ADMIN_PASSWORD) return toast('Invalid admin password', 'error');
+  closeModal('adminLoginModal');
+  document.getElementById('adminPassword').value = '';
+  openModal('adminModal');
+  loadAdmin();
+}
+
+function loadAdmin() {
+  const users = getUsers();
+  const orders = getOrders();
+  const revenue = orders.reduce((s, o) => s + (o.price || 0), 0).toFixed(2);
+  const pending = orders.filter(o => o.status === 'Processing').length;
+  
+  document.getElementById('adminTotalUsers').textContent = users.length;
+  document.getElementById('adminTotalOrders').textContent = orders.length;
+  document.getElementById('adminRevenue').textContent = revenue;
+  document.getElementById('adminPending').textContent = pending;
+}
+
+function switchAdminTab(tab, el) {
+  document.querySelectorAll('[id^="adminTab-"]').forEach(t => t.style.display = 'none');
+  document.getElementById('adminTab-' + tab).style.display = '';
+  document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  
+  if (tab === 'orders') loadAdminOrders();
+  if (tab === 'users') loadAdminUsers();
+  if (tab === 'funds') loadAdminFunds();
+  if (tab === 'codes') loadAdminCodes();
+}
+
+function loadAdminOrders() {
+  const orders = getOrders();
+  const tbody = document.getElementById('adminOrdersBody');
+  tbody.innerHTML = orders.map(o => `
+    <tr>
+      <td><span class="order-id">${o.id}</span></td>
+      <td>${o.userName || o.userId}</td>
+      <td>${o.platform}</td>
+      <td>${o.service}</td>
+      <td>${Number(o.quantity).toLocaleString()}</td>
+      <td><strong>${o.price} GHS</strong></td>
+      <td><span class="badge ${o.status === 'Completed' ? 'badge-success' : 'badge-warning'}">${o.status}</span></td>
+      <td>
+        <button class="btn btn-sm btn-success" onclick="updateOrderStatus('${o.id}','Completed')">✓ Complete</button>
+      </td>
+    </tr>
+  `).join('') || '<tr><td colspan="8" style="text-align:center;padding:20px;color:var(--text-muted)">No orders</td></tr>';
+}
+
+function updateOrderStatus(orderId, status) {
+  const orders = getOrders();
+  const idx = orders.findIndex(o => o.id === orderId);
+  if (idx > -1) { orders[idx].status = status; saveOrders(orders); loadAdminOrders(); toast('Order updated', 'success'); }
+}
+
+function loadAdminUsers() {
+  const users = getUsers();
+  const orders = getOrders();
+  const tbody = document.getElementById('adminUsersBody');
+  tbody.innerHTML = users.map(u => `
+    <tr>
+      <td><strong>${u.id}</strong></td>
+      <td>${u.name}</td>
+      <td>${u.email}</td>
+      <td><strong>${parseFloat(u.balance).toFixed(2)} GHS</strong></td>
+      <td>${orders.filter(o => o.userId === u.id).length}</td>
+      <td>${u.joinDate}</td>
+      <td><button class="btn btn-sm" style="background:var(--primary-light);color:var(--primary)" onclick="adminCreditUser('${u.id}')">Credit</button></td>
+    </tr>
+  `).join('') || '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-muted)">No users</td></tr>';
+}
+
+function adminCreditUser(userId) {
+  const amount = prompt('Enter amount to credit to ' + userId + ' (GHS):');
+  if (!amount || isNaN(amount)) return;
+  const users = getUsers();
+  const idx = users.findIndex(u => u.id === userId);
+  if (idx > -1) {
+    users[idx].balance = +(users[idx].balance + parseFloat(amount)).toFixed(2);
+    saveUsers(users);
+    loadAdminUsers();
+    
+    // Refresh dashboard if user is viewing it
+    const cu = getCurrentUser();
+    if (cu && cu.id === userId) {
+      const updated = users[idx];
+      updateNavUser(updated);
+      if (document.getElementById('page-dashboard').classList.contains('active')) loadDashboard(updated);
+    }
+    toast('Credited ' + amount + ' GHS to ' + userId, 'success');
+  }
+}
+
+function loadAdminFunds() {
+  const reqs = getFundRequests();
+  const tbody = document.getElementById('fundRequestsBody');
+  tbody.innerHTML = reqs.map(r => `
+    <tr>
+      <td><strong>${r.userId}</strong></td>
+      <td>${r.userName}</td>
+      <td><strong>${r.amount} GHS</strong></td>
+      <td>${r.time}</td>
+      <td><span class="badge badge-warning">${r.status}</span></td>
+    </tr>
+  `).join('') || '<tr><td colspan="5" style="text-align:center;padding:20px;color:var(--text-muted)">No requests</td></tr>';
+}
+
+let generatedFundLinkData = null;
+function generateFundLink() {
+  const userId = document.getElementById('fundUserId').value.trim();
+  const amount = document.getElementById('fundAmount').value;
+  if (!userId || !amount) return toast('Please fill both fields', 'error');
+  
+  // Create a claim code for this user
+  const code = 'FUND' + Math.random().toString(36).substring(2, 8).toUpperCase();
+  const codes = getCodes();
+  codes.push({ code, amount: parseFloat(amount), used: false, usedBy: null, forUser: userId });
+  saveCodes(codes);
+  
+  const link = window.location.href.split('?')[0] + '?fund=' + code + '&uid=' + userId;
+  generatedFundLinkData = link;
+  
+  document.getElementById('generatedFundLink').style.display = '';
+  document.getElementById('fundLinkDisplay').textContent = link;
+  loadAdminCodes();
+  toast('Fund link generated!', 'success');
+}
+
+function copyFundLink() {
+  if (generatedFundLinkData) {
+    navigator.clipboard.writeText(generatedFundLinkData).then(() => toast('Link copied!', 'success'));
+  }
+}
+
+function loadAdminCodes() {
+  const codes = getCodes();
+  const tbody = document.getElementById('claimCodesBody');
+  tbody.innerHTML = codes.map(c => `
+    <tr>
+      <td><strong>${c.code}</strong></td>
+      <td>${c.amount} GHS</td>
+      <td><span class="badge ${c.used ? 'badge-success' : 'badge-warning'}">${c.used ? 'Used' : 'Active'}</span></td>
+      <td>${c.usedBy || '—'}</td>
+    </tr>
+  `).join('');
+}
+
+function generateClaimCode() {
+  const codeInput = document.getElementById('newCodeInput').value.trim().toUpperCase();
+  const amount = parseFloat(document.getElementById('newCodeAmount').value);
+  if (!amount) return toast('Enter an amount', 'error');
+  
+  const code = codeInput || 'GB' + Math.random().toString(36).substring(2, 8).toUpperCase();
+  const codes = getCodes();
+  if (codes.find(c => c.code === code)) return toast('Code already exists', 'error');
+  codes.push({ code, amount, used: false, usedBy: null });
+  saveCodes(codes);
+  
+  document.getElementById('generatedCode').style.display = '';
+  document.getElementById('generatedCodeText').textContent = code + ' · ' + amount + ' GHS';
+  loadAdminCodes();
+  toast('Code generated!', 'success');
+}
+
+// ═══════════════════════════════════ MODALS ═══════════════════════════════════
+function openModal(id) { document.getElementById(id).classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.add('hidden'); document.body.style.overflow = ''; }
+function closeModalOutside(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
+
+// ═══════════════════════════════════ FAQ ═══════════════════════════════════
+function toggleFaq(btn) {
+  const ans = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-question').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { btn.classList.add('open'); ans.classList.add('open'); }
+}
+
+// ═══════════════════════════════════ CONTACT ═══════════════════════════════
+function sendContactWhatsApp() {
+  const name = document.getElementById('contactName').value.trim();
+  const phone = document.getElementById('contactPhone').value.trim();
+  const msg = document.getElementById('contactMessage').value.trim();
+  if (!name || !msg) return toast('Please fill name and message', 'error');
+  const text = encodeURIComponent(`📩 Contact from GlobalBooster.gh\n\nName: ${name}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${msg}`);
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text, '_blank');
+}
+
+// ═══════════════════════════════════ TOAST ═══════════════════════════════════
+function toast(msg, type = 'info') {
+  const icons = { success: 'fa-check-circle', error: 'fa-times-circle', info: 'fa-info-circle' };
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  t.innerHTML = `<i class="fas ${icons[type]||icons.info}"></i><span>${msg}</span>`;
+  document.getElementById('toastContainer').appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+// ═══════════════════════════════════ POLICIES ═══════════════════════════════
+const POLICIES = {
+  terms: { title: 'Terms of Service', body: `<strong>Last updated: 2024</strong><br><br>By using Global Booster, you agree to these terms. Our services are for legitimate social media growth purposes only. We reserve the right to refuse service. Payments are processed securely through Paystack. Orders are non-refundable once processing has started, except in cases where we fail to deliver. You must ensure your account is public during service delivery. Global Booster is not responsible for any loss of followers due to platform algorithm changes. All prices are in Ghanaian Cedis (GHS).` },
+  privacy: { title: 'Privacy Policy', body: `<strong>Last updated: 2024</strong><br><br>We collect your name, email address, and social media profile links solely to process your orders. We do not sell your personal data to third parties. Payment information is processed by Paystack and not stored on our servers. Your order history is stored locally. We may use your email to send service updates. By using our service, you consent to this data usage. Contact us via WhatsApp to request data deletion.` },
+  refund: { title: 'Refund Policy', body: `<strong>Last updated: 2024</strong><br><br>Refunds are issued as wallet credits only. If your order fails to start within 48 hours, contact support for a full wallet credit. Partial refunds may be issued for partially delivered orders. No refunds for completed orders. Wallet credits can be used for future orders but cannot be withdrawn as cash. Refund requests must be made within 7 days of the order date. Orders for private accounts are not eligible for refunds — ensure your account is public before ordering.` }
+};
+
+function showPolicy(type) {
+  const p = POLICIES[type];
+  if (!p) return;
+  document.getElementById('policyTitle').textContent = p.title;
+  document.getElementById('policyContent').innerHTML = p.body;
+  openModal('policyModal');
+}
+
+// ═══════════════════════════════════ INIT ═══════════════════════════════════
+function init() {
+  // Check URL params
+  const params = new URLSearchParams(window.location.search);
+  const refParam = params.get('ref');
+  const fundCode = params.get('fund');
+  const fundUid = params.get('uid');
+  
+  if (refParam) { document.getElementById('regRefCode').value = refParam; }
+  
+  // Auto-process fund link if present
+  if (fundCode && fundUid) {
+    const user = getCurrentUser();
+    if (user && user.id === fundUid) {
+      const codes = getCodes();
+      const found = codes.find(c => c.code === fundCode && !c.used && (!c.forUser || c.forUser === fundUid));
+      if (found) {
+        found.used = true;
+        found.usedBy = user.id;
+        saveCodes(codes);
+        user.balance = +(user.balance + found.amount).toFixed(2);
+        updateUser(user);
+        updateNavUser(user);
+        setTimeout(() => toast('✅ ' + found.amount + ' GHS has been added to your wallet!', 'success'), 500);
+      }
+    }
+  }
+  
+  // Restore logged in user
+  const user = getCurrentUser();
+  if (user) onUserLogin(user);
+}
+
+init();
+</script>
+</body>
+</html>
