@@ -1089,7 +1089,7 @@ tr:hover td { background: var(--bg); }
 <div class="modal-overlay hidden" id="adminModal" onclick="closeModalOutside(event,'adminModal')">
   <div class="modal modal-lg" onclick="event.stopPropagation()">
     <div class="modal-header">
-      <div class="modal-title">⚙️ Admin Panel — Global Booster</div>
+      <div class="modal-title">⚙️ Admin Panel — Global Booster &nbsp;<span style="background:var(--primary);color:#fff;border-radius:50px;padding:2px 12px;font-size:13px;font-weight:700;letter-spacing:.5px">KD</span></div>
       <button class="modal-close" onclick="closeModal('adminModal')"><i class="fas fa-times"></i></button>
     </div>
     <div class="modal-body">
@@ -1099,19 +1099,31 @@ tr:hover td { background: var(--bg); }
         <div class="admin-tab" onclick="switchAdminTab('users', this)">Users</div>
         <div class="admin-tab" onclick="switchAdminTab('funds', this)">Fund Requests</div>
         <div class="admin-tab" onclick="switchAdminTab('codes', this)">Claim Codes</div>
+        <div class="admin-tab" onclick="switchAdminTab('activity', this)">🔔 Login Activity</div>
       </div>
 
       <!-- OVERVIEW TAB -->
       <div id="adminTab-overview">
-        <div class="grid-4 mb-3">
+        <div class="grid-4 mb-2">
           <div class="admin-stat"><div class="admin-stat-num" id="adminTotalUsers">0</div><div class="admin-stat-label">Total Users</div></div>
           <div class="admin-stat"><div class="admin-stat-num" id="adminTotalOrders">0</div><div class="admin-stat-label">Total Orders</div></div>
-          <div class="admin-stat"><div class="admin-stat-num" id="adminRevenue">0</div><div class="admin-stat-label">Total Revenue (GHS)</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="adminRevenue">0</div><div class="admin-stat-label">Total Revenue</div></div>
           <div class="admin-stat"><div class="admin-stat-num" id="adminPending">0</div><div class="admin-stat-label">Pending Orders</div></div>
         </div>
-        <div class="card" style="background:var(--bg)">
-          <strong>WhatsApp Notifications</strong>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:6px">Admin number: +233500643544 receives notifications for every fund request and new order automatically via WhatsApp link.</p>
+        <div class="grid-4 mb-3" id="adminExtraStats"></div>
+        <div class="grid-2">
+          <div class="card" style="background:var(--bg)">
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;margin-bottom:12px"><i class="fas fa-users" style="color:var(--primary)"></i> Recent Sign-ups</div>
+            <div id="adminRecentUsers"></div>
+          </div>
+          <div class="card" style="background:var(--bg)">
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;margin-bottom:12px"><i class="fas fa-shopping-bag" style="color:var(--success)"></i> Recent Orders</div>
+            <div id="adminRecentOrders"></div>
+          </div>
+        </div>
+        <div class="card mt-2" style="background:var(--bg)">
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;margin-bottom:12px"><i class="fas fa-sign-in-alt" style="color:var(--accent)"></i> Recent Login Activity <span style="font-size:12px;color:var(--text-muted);font-weight:400">(latest 5)</span></div>
+          <div id="adminRecentActivity"></div>
         </div>
       </div>
 
@@ -1127,11 +1139,31 @@ tr:hover td { background: var(--bg); }
 
       <!-- USERS TAB -->
       <div id="adminTab-users" style="display:none">
+        <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center">
+          <input type="text" class="form-control" id="userSearchInput" placeholder="🔍 Search by name, email or ID..." style="max-width:320px" oninput="loadAdminUsers()">
+          <span id="userCountLabel" style="font-size:13px;color:var(--text-muted);margin-left:4px"></span>
+        </div>
         <div class="table-wrapper">
           <table>
-            <thead><tr><th>User ID</th><th>Name</th><th>Email</th><th>Balance</th><th>Orders</th><th>Joined</th><th>Action</th></tr></thead>
+            <thead><tr><th>User ID</th><th>Name</th><th>Email</th><th>Referral Code</th><th>Balance</th><th>Total Spent</th><th>Orders</th><th>Referrals</th><th>Ref. Earned</th><th>Joined</th><th>Actions</th></tr></thead>
             <tbody id="adminUsersBody"></tbody>
           </table>
+        </div>
+        <div id="userDetailPanel" style="display:none;margin-top:20px">
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+              <h3 style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800" id="detailUserTitle">User Details</h3>
+              <button class="btn btn-sm" style="background:var(--bg);color:var(--text)" onclick="document.getElementById('userDetailPanel').style.display='none'"><i class="fas fa-times"></i> Close</button>
+            </div>
+            <div class="grid-2" id="detailUserInfo" style="margin-bottom:16px"></div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:10px"><i class="fas fa-shopping-bag" style="color:var(--primary)"></i> Order History</div>
+            <div class="table-wrapper">
+              <table>
+                <thead><tr><th>Order ID</th><th>Platform</th><th>Service</th><th>Qty</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+                <tbody id="detailOrdersBody"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1174,11 +1206,23 @@ tr:hover td { background: var(--bg); }
           </table>
         </div>
       </div>
+      <!-- LOGIN ACTIVITY TAB -->
+      <div id="adminTab-activity" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+          <p style="color:var(--text-muted);font-size:14px;margin:0">All user sign-ins and registrations in real time.</p>
+          <button class="btn btn-sm btn-danger" onclick="clearLoginActivity()"><i class="fas fa-trash"></i> Clear Log</button>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Time</th><th>Type</th><th>User ID</th><th>Name</th><th>Email</th></tr></thead>
+            <tbody id="loginActivityBody"></tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
-
-<!-- POLICY MODAL -->
 <div class="modal-overlay hidden" id="policyModal" onclick="closeModalOutside(event,'policyModal')">
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-header">
@@ -1191,9 +1235,9 @@ tr:hover td { background: var(--bg); }
 
 <script>
 // ═══════════════════════════════════ DATA ═══════════════════════════════════
-const ADMIN_PASSWORD = 'globalboostr2024';
+const ADMIN_PASSWORD = 'kingdevilgh.com';
 const WHATSAPP_NUMBER = '233500643544';
-const PAYSTACK_URL = 'https://paystack.shop/pay/globle-booter';
+const PAYSTACK_URL = 'https://paystack.shop/pay/globle-booter ';
 
 const SERVICES = {
   tiktok: {
@@ -1294,6 +1338,14 @@ function getCodes() { return JSON.parse(localStorage.getItem('gb_codes') || JSON
 function saveCodes(c) { localStorage.setItem('gb_codes', JSON.stringify(c)); }
 function getFundRequests() { return JSON.parse(localStorage.getItem('gb_funds') || '[]'); }
 function saveFundRequests(f) { localStorage.setItem('gb_funds', JSON.stringify(f)); }
+function getLoginActivity() { return JSON.parse(localStorage.getItem('gb_login_activity') || '[]'); }
+function saveLoginActivity(a) { localStorage.setItem('gb_login_activity', JSON.stringify(a)); }
+function logLoginActivity(type, user) {
+  const activity = getLoginActivity();
+  activity.unshift({ time: new Date().toLocaleString(), type, userId: user.id, name: user.name, email: user.email });
+  if (activity.length > 200) activity.length = 200; // cap at 200 entries
+  saveLoginActivity(activity);
+}
 function getCurrentUser() { const id = localStorage.getItem('gb_currentUser'); if (!id) return null; return getUsers().find(u => u.id === id) || null; }
 function setCurrentUser(u) { if (u) localStorage.setItem('gb_currentUser', u.id); else localStorage.removeItem('gb_currentUser'); }
 function updateUser(updated) { const users = getUsers(); const idx = users.findIndex(u => u.id === updated.id); if (idx > -1) { users[idx] = updated; saveUsers(users); } }
@@ -1338,6 +1390,7 @@ function registerUser() {
   users.push(newUser);
   saveUsers(users);
   setCurrentUser(newUser);
+  logLoginActivity('Register', newUser);
   closeModal('authModal');
   toast('Account created! Welcome to Global Booster 🚀', 'success');
   onUserLogin(newUser);
@@ -1351,6 +1404,7 @@ function loginUser() {
   const user = users.find(u => u.email === email && u.password === pass);
   if (!user) return toast('Invalid email or password', 'error');
   setCurrentUser(user);
+  logLoginActivity('Login', user);
   closeModal('authModal');
   toast('Welcome back, ' + user.name.split(' ')[0] + '! 👋', 'success');
   onUserLogin(user);
@@ -1721,18 +1775,24 @@ function selectModalPreset(el, amt) {
 }
 
 function proceedToPaystack() {
-  const amt = document.getElementById('addFundsAmt').value;
+  const amt = parseFloat(document.getElementById('addFundsAmt').value);
   const user = getCurrentUser();
   if (!user) return;
   if (!amt || amt < 5) return toast('Minimum amount is 5 GHS', 'error');
   
-  // Log fund request
+  // Credit balance immediately
+  user.balance = +(user.balance + amt).toFixed(2);
+  updateUser(user);
+  updateNavUser(user);
+  if (document.getElementById('page-dashboard').classList.contains('active')) loadDashboard(getCurrentUser());
+  
+  // Log fund request as completed
   const reqs = getFundRequests();
-  reqs.unshift({ userId: user.id, userName: user.name, amount: amt, time: new Date().toLocaleString(), status: 'Pending' });
+  reqs.unshift({ userId: user.id, userName: user.name, amount: amt, time: new Date().toLocaleString(), status: 'Completed' });
   saveFundRequests(reqs);
   
   // Notify admin
-  const msg = encodeURIComponent(`💰 FUND REQUEST — Global Booster\n\nUser: ${user.name}\nID: ${user.id}\nAmount: ${amt} GHS\nTime: ${new Date().toLocaleString()}\n\nPlease verify Paystack payment and credit account.`);
+  const msg = encodeURIComponent(`💰 FUND ADDED — Global Booster\n\nUser: ${user.name}\nID: ${user.id}\nAmount: ${amt} GHS\nTime: ${new Date().toLocaleString()}\n\nFunds have been credited to the user's account.`);
   window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
   
   // Redirect to Paystack
@@ -1740,28 +1800,32 @@ function proceedToPaystack() {
     window.open(PAYSTACK_URL + '?ref=' + user.id + '&amount=' + amt, '_blank');
   }, 500);
   
-  toast('Redirecting to payment... Admin has been notified.', 'info');
+  toast(`✅ ${amt} GHS has been added to your wallet!`, 'success');
 }
 
 function confirmAddFunds() {
-  const amt = document.getElementById('modalFundsAmt').value;
+  const amt = parseFloat(document.getElementById('modalFundsAmt').value);
   const user = getCurrentUser();
   if (!user) return;
   if (!amt || amt < 5) return toast('Minimum amount is 5 GHS', 'error');
   
-  const reqs = getFundRequests();
-  reqs.unshift({ userId: user.id, userName: user.name, amount: amt, time: new Date().toLocaleString(), status: 'Pending' });
-  saveFundRequests(reqs);
+  // Credit balance immediately
+  user.balance = +(user.balance + amt).toFixed(2);
+  updateUser(user);
+  updateNavUser(user);
+  if (document.getElementById('page-dashboard').classList.contains('active')) loadDashboard(getCurrentUser());
   
-  const msg = encodeURIComponent(`💰 FUND REQUEST — Global Booster\n\nUser: ${user.name}\nID: ${user.id}\nAmount: ${amt} GHS\nTime: ${new Date().toLocaleString()}\n\nPlease verify Paystack payment and credit account.`);
-  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+  // Log fund request as completed
+  const reqs = getFundRequests();
+  reqs.unshift({ userId: user.id, userName: user.name, amount: amt, time: new Date().toLocaleString(), status: 'Completed' });
+  saveFundRequests(reqs);
   
   setTimeout(() => {
     window.open(PAYSTACK_URL + '?ref=' + user.id + '&amount=' + amt, '_blank');
   }, 500);
   
   closeModal('addFundsModal');
-  toast('Admin notified! Complete payment on Paystack.', 'success');
+  toast(`✅ ${amt} GHS has been added to your wallet!`, 'success');
 }
 
 // ═══════════════════════════════════ ADMIN ═══════════════════════════════════
@@ -1787,13 +1851,80 @@ function adminLogin() {
 function loadAdmin() {
   const users = getUsers();
   const orders = getOrders();
-  const revenue = orders.reduce((s, o) => s + (o.price || 0), 0).toFixed(2);
+  const funds = getFundRequests();
+  const revenue = orders.reduce((s, o) => s + (parseFloat(o.price) || 0), 0).toFixed(2);
   const pending = orders.filter(o => o.status === 'Processing').length;
+  const totalFunded = funds.reduce((s, r) => s + (parseFloat(r.amount) || 0), 0).toFixed(2);
+  const totalWalletBalance = users.reduce((s, u) => s + (parseFloat(u.balance) || 0), 0).toFixed(2);
   
   document.getElementById('adminTotalUsers').textContent = users.length;
   document.getElementById('adminTotalOrders').textContent = orders.length;
-  document.getElementById('adminRevenue').textContent = revenue;
+  document.getElementById('adminRevenue').textContent = revenue + ' GHS';
   document.getElementById('adminPending').textContent = pending;
+
+  // Extra stats
+  const extraEl = document.getElementById('adminExtraStats');
+  if (extraEl) {
+    extraEl.innerHTML = `
+      <div class="admin-stat"><div class="admin-stat-num">${totalFunded} GHS</div><div class="admin-stat-label">Total Funds Added</div></div>
+      <div class="admin-stat"><div class="admin-stat-num">${totalWalletBalance} GHS</div><div class="admin-stat-label">Total Wallet Balances</div></div>
+      <div class="admin-stat"><div class="admin-stat-num">${funds.length}</div><div class="admin-stat-label">Fund Transactions</div></div>
+      <div class="admin-stat"><div class="admin-stat-num">${orders.filter(o=>o.status==='Completed').length}</div><div class="admin-stat-label">Completed Orders</div></div>
+    `;
+  }
+
+  // Recent users
+  const recentUsersEl = document.getElementById('adminRecentUsers');
+  if (recentUsersEl) {
+    const recent = [...users].reverse().slice(0, 5);
+    recentUsersEl.innerHTML = recent.length ? recent.map(u => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+        <div>
+          <div style="font-weight:700;font-size:14px">${u.name}</div>
+          <div style="font-size:12px;color:var(--text-muted)">${u.email} · ${u.id}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:700;color:var(--primary)">${parseFloat(u.balance).toFixed(2)} GHS</div>
+          <div style="font-size:12px;color:var(--text-muted)">${u.joinDate || ''}</div>
+        </div>
+      </div>
+    `).join('') : '<p style="color:var(--text-muted);font-size:13px">No users yet</p>';
+  }
+
+  // Recent orders
+  const recentOrdersEl = document.getElementById('adminRecentOrders');
+  if (recentOrdersEl) {
+    const recent = [...orders].reverse().slice(0, 5);
+    recentOrdersEl.innerHTML = recent.length ? recent.map(o => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+        <div>
+          <div style="font-weight:700;font-size:14px;color:var(--primary)">${o.id}</div>
+          <div style="font-size:12px;color:var(--text-muted)">${o.userName || o.userId} · ${o.platform} ${o.service}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:700">${o.price} GHS</div>
+          <span class="badge ${o.status==='Completed'?'badge-success':'badge-warning'}" style="font-size:11px">${o.status}</span>
+        </div>
+      </div>
+    `).join('') : '<p style="color:var(--text-muted);font-size:13px">No orders yet</p>';
+  }
+  // Recent login activity
+  const recentActivityEl = document.getElementById('adminRecentActivity');
+  if (recentActivityEl) {
+    const activity = getLoginActivity().slice(0, 5);
+    recentActivityEl.innerHTML = activity.length ? activity.map(a => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="badge ${a.type === 'Login' ? 'badge-primary' : 'badge-success'}" style="width:72px;text-align:center">${a.type === 'Login' ? '🔑 Login' : '🆕 Signup'}</span>
+          <div>
+            <div style="font-weight:700;font-size:14px">${a.name}</div>
+            <div style="font-size:12px;color:var(--text-muted)">${a.email} · ${a.userId}</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-muted);text-align:right">${a.time}</div>
+      </div>
+    `).join('') : '<p style="color:var(--text-muted);font-size:13px">No activity yet</p>';
+  }
 }
 
 function switchAdminTab(tab, el) {
@@ -1806,6 +1937,7 @@ function switchAdminTab(tab, el) {
   if (tab === 'users') loadAdminUsers();
   if (tab === 'funds') loadAdminFunds();
   if (tab === 'codes') loadAdminCodes();
+  if (tab === 'activity') loadLoginActivity();
 }
 
 function loadAdminOrders() {
@@ -1834,20 +1966,98 @@ function updateOrderStatus(orderId, status) {
 }
 
 function loadAdminUsers() {
-  const users = getUsers();
+  let users = getUsers();
   const orders = getOrders();
+  const search = (document.getElementById('userSearchInput') || {}).value || '';
+  if (search) {
+    const q = search.toLowerCase();
+    users = users.filter(u => u.id.toLowerCase().includes(q) || u.name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q));
+  }
+  const label = document.getElementById('userCountLabel');
+  if (label) label.textContent = users.length + ' user(s) found';
   const tbody = document.getElementById('adminUsersBody');
-  tbody.innerHTML = users.map(u => `
+  tbody.innerHTML = users.map(u => {
+    const userOrders = orders.filter(o => o.userId === u.id);
+    const totalSpent = userOrders.reduce((s, o) => s + (parseFloat(o.price) || 0), 0).toFixed(2);
+    return `
     <tr>
-      <td><strong>${u.id}</strong></td>
+      <td><strong style="color:var(--primary)">${u.id}</strong></td>
       <td>${u.name}</td>
       <td>${u.email}</td>
+      <td><span style="font-family:monospace;font-size:12px;background:var(--primary-light);padding:2px 8px;border-radius:4px;color:var(--primary)">${u.referralCode || '—'}</span></td>
       <td><strong>${parseFloat(u.balance).toFixed(2)} GHS</strong></td>
-      <td>${orders.filter(o => o.userId === u.id).length}</td>
-      <td>${u.joinDate}</td>
-      <td><button class="btn btn-sm" style="background:var(--primary-light);color:var(--primary)" onclick="adminCreditUser('${u.id}')">Credit</button></td>
+      <td style="color:var(--success);font-weight:600">${totalSpent} GHS</td>
+      <td>${userOrders.length}</td>
+      <td>${u.referrals || 0}</td>
+      <td>${parseFloat(u.referralEarned || 0).toFixed(2)} GHS</td>
+      <td style="font-size:12px;color:var(--text-muted)">${u.joinDate || '—'}</td>
+      <td style="display:flex;gap:6px;flex-wrap:wrap">
+        <button class="btn btn-sm" style="background:var(--primary-light);color:var(--primary)" onclick="adminCreditUser('${u.id}')"><i class="fas fa-plus"></i> Credit</button>
+        <button class="btn btn-sm" style="background:#FEE2E2;color:#991B1B" onclick="adminDebitUser('${u.id}')"><i class="fas fa-minus"></i> Debit</button>
+        <button class="btn btn-sm" style="background:var(--bg);color:var(--text);border:1px solid var(--border)" onclick="viewUserDetail('${u.id}')"><i class="fas fa-eye"></i></button>
+      </td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="11" style="text-align:center;padding:20px;color:var(--text-muted)">No users found</td></tr>';
+}
+
+function adminDebitUser(userId) {
+  const amount = prompt('Enter amount to DEBIT from ' + userId + ' (GHS):');
+  if (!amount || isNaN(amount) || parseFloat(amount) <= 0) return;
+  const users = getUsers();
+  const idx = users.findIndex(u => u.id === userId);
+  if (idx > -1) {
+    users[idx].balance = Math.max(0, +(users[idx].balance - parseFloat(amount)).toFixed(2));
+    saveUsers(users);
+    loadAdminUsers();
+    const cu = getCurrentUser();
+    if (cu && cu.id === userId) {
+      updateNavUser(users[idx]);
+      if (document.getElementById('page-dashboard').classList.contains('active')) loadDashboard(users[idx]);
+    }
+    toast('Debited ' + amount + ' GHS from ' + userId, 'success');
+  }
+}
+
+function viewUserDetail(userId) {
+  const users = getUsers();
+  const orders = getOrders();
+  const u = users.find(u => u.id === userId);
+  if (!u) return;
+  const userOrders = orders.filter(o => o.userId === userId);
+  const totalSpent = userOrders.reduce((s, o) => s + (parseFloat(o.price) || 0), 0).toFixed(2);
+  const funds = getFundRequests().filter(r => r.userId === userId);
+  const totalFunded = funds.reduce((s, r) => s + (parseFloat(r.amount) || 0), 0).toFixed(2);
+
+  document.getElementById('detailUserTitle').textContent = '👤 ' + u.name + ' (' + u.id + ')';
+  document.getElementById('detailUserInfo').innerHTML = `
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">FULL NAME</div><div style="font-weight:700">${u.name}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">EMAIL</div><div>${u.email}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">USER ID</div><div style="font-family:monospace;color:var(--primary);font-weight:700">${u.id}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">REFERRAL CODE</div><div style="font-family:monospace;background:var(--primary-light);padding:2px 8px;border-radius:4px;display:inline-block;color:var(--primary);font-weight:700">${u.referralCode || '—'}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">WALLET BALANCE</div><div style="font-size:1.2rem;font-weight:800;color:var(--primary)">${parseFloat(u.balance).toFixed(2)} GHS</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">TOTAL SPENT</div><div style="font-weight:700;color:var(--success)">${totalSpent} GHS</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">TOTAL FUNDED</div><div style="font-weight:700">${totalFunded} GHS</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">TOTAL ORDERS</div><div style="font-weight:700">${userOrders.length}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">REFERRALS MADE</div><div style="font-weight:700">${u.referrals || 0}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">REFERRAL EARNINGS</div><div style="font-weight:700">${parseFloat(u.referralEarned || 0).toFixed(2)} GHS</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">JOINED DATE</div><div>${u.joinDate || '—'}</div></div>
+    <div><div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:4px">REFERRED BY</div><div>${u.referredBy || '—'}</div></div>
+  `;
+  document.getElementById('detailOrdersBody').innerHTML = userOrders.length ? userOrders.map(o => `
+    <tr>
+      <td><span class="order-id">${o.id}</span></td>
+      <td>${o.platform}</td>
+      <td>${o.service}</td>
+      <td>${Number(o.quantity).toLocaleString()}</td>
+      <td><strong>${o.price} GHS</strong></td>
+      <td><span class="badge ${o.status === 'Completed' ? 'badge-success' : 'badge-warning'}">${o.status}</span></td>
+      <td style="font-size:12px;color:var(--text-muted)">${o.date}</td>
     </tr>
-  `).join('') || '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-muted)">No users</td></tr>';
+  `).join('') : '<tr><td colspan="7" style="text-align:center;padding:16px;color:var(--text-muted)">No orders yet</td></tr>';
+
+  const panel = document.getElementById('userDetailPanel');
+  panel.style.display = '';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function adminCreditUser(userId) {
@@ -1910,6 +2120,31 @@ function copyFundLink() {
   if (generatedFundLinkData) {
     navigator.clipboard.writeText(generatedFundLinkData).then(() => toast('Link copied!', 'success'));
   }
+}
+
+function loadLoginActivity() {
+  const activity = getLoginActivity();
+  const tbody = document.getElementById('loginActivityBody');
+  if (!activity.length) {
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:32px">No login activity yet.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = activity.map(a => `
+    <tr>
+      <td style="font-size:13px;color:var(--text-muted)">${a.time}</td>
+      <td><span class="badge ${a.type === 'Login' ? 'badge-primary' : 'badge-success'}">${a.type === 'Login' ? '🔑 Sign In' : '🆕 Register'}</span></td>
+      <td style="font-family:'Outfit',sans-serif;font-weight:700;color:var(--primary)">${a.userId}</td>
+      <td style="font-weight:600">${a.name}</td>
+      <td style="color:var(--text-muted);font-size:13px">${a.email}</td>
+    </tr>
+  `).join('');
+}
+
+function clearLoginActivity() {
+  if (!confirm('Clear all login activity logs?')) return;
+  saveLoginActivity([]);
+  loadLoginActivity();
+  toast('Login activity cleared', 'info');
 }
 
 function loadAdminCodes() {
